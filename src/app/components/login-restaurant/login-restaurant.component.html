@@ -1,0 +1,40 @@
+<div class="login-restaurant">
+    <div>
+        <img class="image" src="assets/W.png" alt="Logo-App">
+    </div>
+
+    <div class="label-init">
+        <span>Olá</span>
+        <span>Faça login em sua conta</span>
+    </div>
+
+    <form>
+        <div class="label">
+            <div class="email">
+                <mat-form-field appearance="fill">
+                    <mat-label>Usuário</mat-label>
+                    <input matInput placeholder="Usuário" [@formControl]="email" required>
+                    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="password">
+                <mat-form-field appearance="fill">
+                    <mat-label>Senha</mat-label>
+                    <input matInput placeholder="Senha" [type]="hide ? 'password' : 'text'">
+                    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="hide">
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+
+            <div class="button">
+                <button type="submit" class="login-button">Login</button>
+            </div>
+        </div>
+    </form>
+    <div class="anchor">
+        <div><a href="#">Cadastrar Restaurante</a></div>
+        <div><a href="#">Esqueceu a Sua Senha?</a></div>
+    </div>
+</div>
