@@ -1,11 +1,11 @@
-<div class="login-restaurant">
+<div class="signup-restaurant">
     <div>
         <img class="image" src="assets/W.png" alt="Logo-App">
     </div>
 
     <div class="label-init">
         <span>Olá</span>
-        <span>Faça login em sua conta</span>
+        <span>Cadastre o seu Restaurante</span>
     </div>
 
     <form>
@@ -13,17 +13,16 @@
             <div class="email">
                 <input type="email" placeholder="Email">
             </div>
+            <div class="cpf_cnpj">
+                <input type="text" placeholder="CPF/CNPJ">
+            </div>
             <div class="password">
                 <input type="password" placeholder="Senha">
             </div>
 
             <div class="button">
-                <button type="submit" class="login-button">Login</button>
+                <button type="submit" class="restaurant-signup-button">Cadastrar</button>
             </div>
         </div>
     </form>
-    <div class="anchor">
-        <div><a (click)="signUpRoute()">Cadastrar Restaurante</a></div>
-        <div><a (click)="forgetRoute()">Esqueceu a Sua Senha?</a></div>
-    </div>
 </div>

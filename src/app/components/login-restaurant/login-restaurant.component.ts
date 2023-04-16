@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-restaurant',
@@ -7,15 +7,13 @@ import { FormControl, Validators } from '@angular/forms';
   styleUrls: ['./login-restaurant.component.css']
 })
 export class LoginRestaurantComponent {
-  email = new FormControl('', [Validators.required, Validators.email]);
+  constructor(private router: Router) { }
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
-    }
-
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+  signUpRoute() {
+    this.router.navigate(['/signup-restaurant'])
   }
 
-  hide = true;
+  forgetRoute() {
+    this.router.navigate(['/forget-password'])
+  }
 }
