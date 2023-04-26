@@ -11,14 +11,14 @@
     <form>
         <div class="label">
             <div class="email">
-                <input type="email" placeholder="Email">
+                <input #email type="email" placeholder="Email">
             </div>
             <div class="password">
-                <input type="password" placeholder="Senha">
+                <input #password type="password" placeholder="Senha">
             </div>
 
             <div class="button">
-                <button type="submit" class="login-button">Login</button>
+                <button (click)="login(email.value, password.value)" type="button" class="login-button">Login</button>
             </div>
         </div>
     </form>

@@ -8,7 +8,7 @@ import * as $ from 'jquery';
 })
 export class AppComponent {
   title = 'Waiter_Tech';
-
+  valor = "";
   conectar()
   {
     $.get("http://localhost:3000/", function(resultado)
@@ -25,6 +25,19 @@ export class AppComponent {
     function(msg)
     {
       console.log(msg)
+    })
+  }
+
+  AlterarCampo(valorCaixa: string)
+  {
+    this.valor=valorCaixa
+  }
+
+  Clicando()
+  {
+    $.get("http://localhost:3000/", (resultado) => {
+      console.log(resultado)
+      this.valor=resultado
     })
   }
 }
