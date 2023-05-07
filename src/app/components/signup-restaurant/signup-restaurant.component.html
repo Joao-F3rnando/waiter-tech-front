@@ -8,16 +8,20 @@
         <span>Cadastre o seu Restaurante</span>
     </div>
 
-    <form>
+    <form #signUpForm='ngForm' (ngSubmit)="signUp(signUpForm)">
         <div class="label">
+            <div class="restaurantName">
+                <input name="restaurantName" type="text" [(ngModel)]="userData.restaurantName"
+                    placeholder="Nome do Restaurante">
+            </div>
             <div class="email">
-                <input type="email" placeholder="Email">
+                <input name="email" type="email" [(ngModel)]="userData.email" placeholder="Email">
             </div>
             <div class="cpf_cnpj">
-                <input type="text" placeholder="CPF/CNPJ">
+                <input name="cpf_cnpj" type="text" [(ngModel)]="userData.cpf_cnpj" placeholder="CPF/CNPJ">
             </div>
             <div class="password">
-                <input type="password" placeholder="Senha">
+                <input name="password" type="password" [(ngModel)]="userData.password" placeholder="Senha">
             </div>
 
             <div class="button">

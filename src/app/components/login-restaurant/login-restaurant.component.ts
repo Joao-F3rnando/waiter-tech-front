@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
 import * as $ from 'jquery';
+
+const route = "http://localhost:3000"
 
 @Component({
   selector: 'app-login-restaurant',
@@ -18,22 +21,28 @@ export class LoginRestaurantComponent {
     this.router.navigate(['/forget-password'])
   }
 
-  login(email: string, password: string)
-  {
-    console.log(email)
-    console.log(password)
+  userLogin = {
+    email: '',
+    password: ''
+  }
 
-    const user = 
+  login(form: NgForm) {
+    const self: any = this
+    const user =
     {
-      "email": email,
-      "password": password
+      "email": this.userLogin.email,
+      "password": this.userLogin.password
     }
 
-    $.get("http://localhost:3000/tudo",
-    user,
-    function (msg)
-    {
-      console.log(msg)
-    })
+    $.post(`${route}/login`,
+      user,
+      function (msg) {
+        if (msg.status === true) {
+          alert(msg.message)
+        }
+        else {
+          alert(msg)
+        }
+      })
   }
 }

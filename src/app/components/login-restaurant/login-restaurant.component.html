@@ -8,17 +8,17 @@
         <span>Faça login em sua conta</span>
     </div>
 
-    <form>
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <div class="label">
             <div class="email">
-                <input #email type="email" placeholder="Email">
+                <input name="email" [(ngModel)]="userLogin.email" type="email" placeholder="Email">
             </div>
             <div class="password">
-                <input #password type="password" placeholder="Senha">
+                <input name="password" [(ngModel)]="userLogin.password" type="password" placeholder="Senha">
             </div>
 
             <div class="button">
-                <button (click)="login(email.value, password.value)" type="button" class="login-button">Login</button>
+                <button type="submit" class="login-button">Login</button>
             </div>
         </div>
     </form>
