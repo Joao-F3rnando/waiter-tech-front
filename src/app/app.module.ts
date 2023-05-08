@@ -9,6 +9,9 @@ import { LoginFormComponent } from './components/login-form/login-form.component
 import { LoginRestaurantComponent } from './components/login-restaurant/login-restaurant.component';
 import { SignupRestaurantComponent } from './components/signup-restaurant/signup-restaurant.component';
 import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
+import { OptionComponent } from './components/option/option.component';
+import { DishesComponent } from './components/dishes/dishes.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
     LoginFormComponent,
     LoginRestaurantComponent,
     SignupRestaurantComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    AddItemComponent,
+    OptionComponent,
+    DishesComponent
   ],
   imports: [
     BrowserModule,

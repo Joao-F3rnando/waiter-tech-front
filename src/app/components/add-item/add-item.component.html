@@ -1,0 +1,61 @@
+<header>
+    <img src="../../../assets/seta-esquerda.png" alt="">
+    <h1>Cardápio</h1>
+</header>
+
+<div class="add-menu">
+    <form action="">
+        <div class="form-info">
+            <label for="">Nome do prato</label>
+            <input type="text" placeholder="Ex: Salmão grelhado" class="small-input">
+        </div>
+
+        <div class="form-info">
+            <label for="">Descrição</label>
+            <input type="text"
+                placeholder="Ex: Salmão grelhado com arroz e salada de repolho de acompanhamento. Feijão opcional."
+                maxlength="100" class="large-input">
+        </div>
+
+        <div class="form-info">
+            <label for="">Imagem</label>
+            <input type="file">
+        </div>
+
+        <div class="form-info">
+
+            <label for="">Categoria</label>
+
+            <div class="input-check">
+
+                <input type="checkbox">
+                <label for="">Prato</label>
+
+                <input type="checkbox">
+                <label for="">Bebida</label>
+
+                <input type="checkbox">
+                <label for="">Sobremesas</label>
+
+            </div>
+
+        </div>
+
+        <div class="form-info">
+            <label for="">Valor em R$</label>
+            <input type="number" step="0.01" placeholder="Utilize vírgula para os centavos" class="small-input">
+        </div>
+
+        <div class="show-yes-no">
+            <label for="">Aparecer no cardápio?</label>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <div class="container">
+            <button type="submit" class="btn">Salvar</button>
+        </div>
+    </form>
+</div>
