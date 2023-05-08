@@ -12,6 +12,7 @@ import { ForgetPasswordComponent } from './components/forget-password/forget-pas
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { OptionComponent } from './components/option/option.component';
 import { DishesComponent } from './components/dishes/dishes.component';
+import { OptionEditComponent } from './components/option-edit/option-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DishesComponent } from './components/dishes/dishes.component';
     ForgetPasswordComponent,
     AddItemComponent,
     OptionComponent,
-    DishesComponent
+    DishesComponent,
+    OptionEditComponent
   ],
   imports: [
     BrowserModule,
