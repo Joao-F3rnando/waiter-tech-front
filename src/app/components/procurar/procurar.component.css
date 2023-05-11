@@ -1,0 +1,48 @@
+
+body {
+    background-color: #E1E1E1;
+}
+
+.procurar {
+    display: flex;
+    border: 1px solid rgb(190, 180, 180);
+    border-radius: 12px;
+    padding: 6px;
+}
+
+.restaurantes {
+    color: #192F01;
+    display: flex;
+    padding: 26px;
+    font-size: 18px;
+    justify-content: center;
+}
+
+.input_pesquisar {
+    border: none;
+}
+
+input::placeholder{
+    color: #192F01;
+    font-size: 16px;
+}
+
+
+.burgao {
+    display: flex;
+    flex-direction: column;
+    gap: 27px;
+}
+
+.burger {
+    box-sizing: border-box;
+    display: flex;
+    justify-content:left;
+    background-color: #F8EFEA;
+    padding: 16px;
+}
+
+.burgin {
+    margin: 26px;
+    font-weight: bolder;
+}

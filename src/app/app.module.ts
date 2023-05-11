@@ -13,6 +13,9 @@ import { AddItemComponent } from './components/add-item/add-item.component';
 import { OptionComponent } from './components/option/option.component';
 import { DishesComponent } from './components/dishes/dishes.component';
 import { OptionEditComponent } from './components/option-edit/option-edit.component';
+import { HomeRestauranteComponent } from './components/home-restaurante/home-restaurante.component';
+import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
+import { ProcurarComponent } from './components/procurar/procurar.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { OptionEditComponent } from './components/option-edit/option-edit.compon
     AddItemComponent,
     OptionComponent,
     DishesComponent,
-    OptionEditComponent
+    OptionEditComponent,
+    HomeRestauranteComponent,
+    LocalizacaoComponent,
+    ProcurarComponent
   ],
   imports: [
     BrowserModule,

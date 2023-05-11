@@ -1,0 +1,44 @@
+
+
+.image_c {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 45px;
+}
+
+.image_cc {
+    height: 220px;
+    width: 220px;
+    background-color: #FFDDE2;
+    border: 6px solid #FFDDE2;
+    border-radius: 6px;
+}
+
+.titulo {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.endereco {
+    text-align: center;
+    font-weight: bolder;
+}
+
+.funcionamento {
+    margin: 28px;
+    font-weight: bolder;
+}
+
+
+.contato {
+    margin: 28px;
+    font-weight: bolder;
+}
+
+.image_w {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-weight: bolder;
+}
