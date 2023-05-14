@@ -180,7 +180,7 @@ input[type="number"]::-webkit-inner-spin-button {
     height: 49px;
     border: none;
     border-radius: 10px;
-    background-color: #E0475B;
+    background-color: rgba(224, 71, 91, 0.88);
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;

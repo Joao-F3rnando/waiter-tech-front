@@ -1,0 +1,156 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    height: 30px;
+    margin-left: 20px;
+}
+
+h1 {
+    text-align: center;
+    flex: 2;
+    text-transform: uppercase;
+}
+
+/* CONFIG IMAGEM E PREÇO DO PEDIDO */
+
+.general-content{
+    width: 100%;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(221, 229, 182, 0.45);
+    width: 314px;
+    height: 323px;
+    border-radius: 10px;
+}
+
+.dish-choice{
+    width: 289px;
+    height: 191px;
+    border-radius: 10px;
+}
+
+.dish-info{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center  ;
+}
+
+/* CONTADOR */
+
+.counter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+    gap: 2vh;
+    font-size: 30px;
+}
+
+.less-more{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(224, 71, 91, 0.88);
+    color: #fff;
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+}
+
+/* DESCRIÇÃO */
+
+.dish-details{
+    max-width: 90%;
+    margin-left: 3vh;
+    margin-bottom: 3vh;
+}
+
+p{
+    font-size: 14px;
+    font-weight: 100;
+    margin-bottom: 3vh;
+}
+
+.more-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+span{
+    font-size: 20px;
+}
+
+.add-obs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    border: none;
+    color: #000;
+    border-radius: 13px;
+    word-wrap: break-word;
+    padding: 0 0 0 15px;
+}
+
+.large-input {
+    width: 314px;
+    height: 84px;
+}
+
+::placeholder {
+    display: flex;
+    text-indent: 0;
+    white-space: pre-wrap;
+    line-height: 2.5px;
+    text-align: start;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.large-input::placeholder {
+    position: absolute;
+    padding: 10px 0;
+}
+
+.finish-info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3vh;
+}
+
+.btn {
+    width: 165px;
+    height: 49px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(224, 71, 91, 0.88);
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 22px;
+}
