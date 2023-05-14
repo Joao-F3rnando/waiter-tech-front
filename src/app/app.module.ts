@@ -16,6 +16,8 @@ import { OptionEditComponent } from './components/option-edit/option-edit.compon
 import { HomeRestauranteComponent } from './components/home-restaurante/home-restaurante.component';
 import { LocalizacaoComponent } from './components/localizacao/localizacao.component';
 import { ProcurarComponent } from './components/procurar/procurar.component';
+import { LoginClientComponent } from './components/login-client/login-client.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ProcurarComponent } from './components/procurar/procurar.component';
     OptionEditComponent,
     HomeRestauranteComponent,
     LocalizacaoComponent,
-    ProcurarComponent
+    ProcurarComponent,
+    LoginClientComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
