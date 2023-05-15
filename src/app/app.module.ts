@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,8 @@ import { LocalizacaoComponent } from './components/localizacao/localizacao.compo
 import { ProcurarComponent } from './components/procurar/procurar.component';
 import { LoginClientComponent } from './components/login-client/login-client.component';
 import { DetailsComponent } from './components/details/details.component';
+import { QrcodeComponent } from './components/qrcode/qrcode.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +37,16 @@ import { DetailsComponent } from './components/details/details.component';
     LocalizacaoComponent,
     ProcurarComponent,
     LoginClientComponent,
-    DetailsComponent
+    DetailsComponent,
+    QrcodeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    QRCodeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

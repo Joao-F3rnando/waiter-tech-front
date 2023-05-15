@@ -51,6 +51,7 @@ button {
     border-radius: 10px;
     font-weight: 600;
     font-family: 'League Spartan', sans-serif;
+    border: none;
 }
 
 .button {

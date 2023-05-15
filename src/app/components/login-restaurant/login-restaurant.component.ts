@@ -10,6 +10,7 @@ const route = "http://localhost:3000"
   templateUrl: './login-restaurant.component.html',
   styleUrls: ['./login-restaurant.component.css']
 })
+
 export class LoginRestaurantComponent {
   constructor(private router: Router) { }
 
@@ -27,7 +28,6 @@ export class LoginRestaurantComponent {
   }
 
   login(form: NgForm) {
-    const self: any = this
     const user =
     {
       "email": this.userLogin.email,
@@ -36,9 +36,11 @@ export class LoginRestaurantComponent {
 
     $.post(`${route}/login`,
       user,
-      function (msg) {
+      (msg) => {
         if (msg.status === true) {
           alert(msg.message)
+          localStorage.setItem('ID', msg.id)
+          this.router.navigate(['/home-restaurant'])
         }
         else {
           alert(msg)

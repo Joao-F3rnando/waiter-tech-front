@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-client',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-client.component.css']
 })
 export class LoginClientComponent {
+  constructor(private router: Router) { }
 
+  findPageNavigate() {
+    this.router.navigate(['procurar'])
+  }
+
+  qrcodeNavigate() {
+    this.router.navigate(['qrcode'])
+  }
 }

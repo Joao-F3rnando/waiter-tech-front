@@ -9,7 +9,11 @@ import { Router } from '@angular/router';
 export class LoginFormComponent {
   constructor(private router: Router) { }
 
-  changeRoute() {
+  loginRestaurant() {
     this.router.navigate(['/login-restaurant'])
+  }
+
+  loginClient() {
+    this.router.navigate(['/login-client'])
   }
 }
