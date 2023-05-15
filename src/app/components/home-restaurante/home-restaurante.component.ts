@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery'
+import { data } from '../externalData';
 
 const route = "http://localhost:3000"
 
@@ -16,16 +17,15 @@ export class HomeRestauranteComponent {
   constructor(private router: Router) { }
 
   ngOnInit() {
-    if (localStorage.getItem('ID') === null) {
+    if (data.id === '') {
       alert('Você não está logado!!!')
       this.router.navigate(['login-restaurant'])
     }
     else {
-      this.userID = localStorage.getItem('ID')
+      this.userID = data.id
       $.post(`${route}/getRestaurantName`,
         { id: this.userID },
         (msg) => {
-          console.log(msg.restaurant_name)
           this.restaurantName = msg.restaurant_name
         })
     }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
+import { data } from '../externalData';
+
 import * as $ from 'jquery';
 
 const route = "http://localhost:3000"
@@ -39,7 +41,7 @@ export class LoginRestaurantComponent {
       (msg) => {
         if (msg.status === true) {
           alert(msg.message)
-          localStorage.setItem('ID', msg.id)
+          data.id = msg.id
           this.router.navigate(['/home-restaurant'])
         }
         else {
