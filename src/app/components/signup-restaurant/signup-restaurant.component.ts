@@ -19,7 +19,8 @@ export class SignupRestaurantComponent {
     cpf_cnpj: '',
     password: '',
     address: '-',
-    contact: '-'
+    contact: '-',
+    time: '-'
   }
 
   signUp(form: NgForm) {

@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
-import { QRCodeModule } from 'angularx-qrcode';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +20,7 @@ import { LoginClientComponent } from './components/login-client/login-client.com
 import { DetailsComponent } from './components/details/details.component';
 import { QrcodeComponent } from './components/qrcode/qrcode.component';
 import { HomeComponent } from './components/home/home.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -39,14 +39,14 @@ import { HomeComponent } from './components/home/home.component';
     LoginClientComponent,
     DetailsComponent,
     QrcodeComponent,
-    HomeComponent
+    HomeComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatFormFieldModule,
-    FormsModule,
-    QRCodeModule
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
