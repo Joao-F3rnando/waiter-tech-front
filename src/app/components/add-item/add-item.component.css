@@ -120,6 +120,11 @@ input {
     height: 90px;
 }
 
+.large-input input{
+    padding: -100px;
+    align-items: flex-start;
+}
+
 ::placeholder {
     display: flex;
     text-indent: 0;

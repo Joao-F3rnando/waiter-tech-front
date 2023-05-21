@@ -1,149 +1,55 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
-
-html,
-body {
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
-* {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    letter-spacing: 1px;
-}
-
-.retangulo {
-    width: 90%;
-    /* ajuste o tamanho conforme sua necessidade */
-    height: 20%;
-    /* ajuste o tamanho conforme sua necessidade */
-    background-color: #EEE0CB;
-    /* define a cor de fundo */
-    border: 1px solid #ddd;
-    /* define a borda */
-    border-radius: 10px;
-    /* define a borda arredondada */
-    box-shadow: 2px 2px 5px #ccc;
-    /* adiciona sombra à caixa */
-    margin: 10px;
-    display: grid;
-    grid-template: 100% / 35% 65%;
-    grid-template-areas:
-        "img conteudo";
-}
-
-.conteudo {
-    grid-template: 25% 75% / 100%;
-    display: grid;
-    grid-template-areas:
-        "titulo"
-        "botoes";
-    grid-area: conteudo;
-}
-
-.img {
+header {
     display: flex;
-    align-items: flex-start;
-    /* Alinha verticalmente ao centro */
-    /* align-items: flex-start;   Alinha no início do eixo transversal */
-    /* align-items: flex-end;     Alinha no final do eixo transversal */
-    /* align-items: stretch;      Estica para preencher o eixo transversal */
-    grid-area: img;
-    bottom: 20%;
-    margin-bottom: 20%;
-    padding-bottom: 20%;
-}
-
-.titulo {
-    display: flex;
-    justify-content: center;
-    grid-area: titulo;
-    margin-top: 1%;
-}
-
-.botoes {
-    display: flex;
-    justify-content: center;
-    display: grid;
-    grid-template: 100% / 50% 50%;
-    grid-template-areas:
-        "btn1 btn2";
-    grid-area: botoes;
-}
-
-.btn1 {
-    display: flex;
-    justify-content: center;
-    grid-area: btn1;
-    width: 10%;
-    /* Define a largura do botão */
-    height: 10%;
-    /* Define a altura do botão */
-    /* Defina o caminho da imagem */
-    background-size: cover;
-    /* Ajusta a imagem para cobrir todo o botão */
-    background-position: center;
-    /* Centraliza a imagem no botão */
-    border: none;
-    /* Remove a borda do botão */
-    cursor: pointer;
-    /* Define o cursor como ponteiro ao passar o mouse sobre o botão */
-}
-
-.btn2 {
-    display: flex;
-    justify-content: center;
-    grid-area: btn2;
-    width: 10%;
-    /* Define a largura do botão */
-    height: 10%;
-    /* Define a altura do botão */
-    /* Defina o caminho da imagem */
-    background-size: cover;
-    /* Ajusta a imagem para cobrir todo o botão */
-    background-position: center;
-    /* Centraliza a imagem no botão */
-    border: none;
-    /* Remove a borda do botão */
-    cursor: pointer;
-    /* Define o cursor como ponteiro ao passar o mouse sobre o botão */
-}
-
-.txt {
-    display: flex;
-    justify-content: center;
-    grid-area: txt;
-}
-
-/*
-*/
-
-.content {
-    position: relative;
-    height: 60vh;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: space-between;
 }
 
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: contain;
-    background-position: center center !important;
-    background-repeat: no-repeat;
-    z-index: -1;
+header img {
+    height: 30px;
+    margin-left: 20px;
 }
 
-.exemp {
-    position: relative;
-    color: #fff;
-    font-size: 32px;
+h1 {
     text-align: center;
+    flex: 2;
+    text-transform: uppercase;
+}
+
+/* DIVISÃO DO MENU */
+
+.container{
+    gap: 20px;
+}
+
+.background{
+    background-color: #F8EFEA;
+    height: 113px;
+}
+
+.details{
+    display: flex;
+    margin: 20px 10px;
+}
+
+.food-img{
+    width: 130px;
+    height: 94px;
+    margin: 10px 0;
+    border-radius: 10px;
+}
+
+.text{
+    margin-left: 20px;
+}
+
+h2{
+    font-size: 23px;
+    text-transform: uppercase;
+}
+
+.text p, h2{
+    width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
