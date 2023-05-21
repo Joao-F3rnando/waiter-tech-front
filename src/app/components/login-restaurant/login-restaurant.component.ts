@@ -1,8 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
-import { data } from '../externalData';
-
 import * as $ from 'jquery';
 
 const route = "http://localhost:3000"
@@ -13,8 +11,17 @@ const route = "http://localhost:3000"
   styleUrls: ['./login-restaurant.component.css']
 })
 
-export class LoginRestaurantComponent {
+export class LoginRestaurantComponent implements OnInit {
   constructor(private router: Router) { }
+
+  userID: any
+  async ngOnInit() {
+    this.userID = localStorage.getItem('id')
+    if (this.userID != null) {
+      this.router.navigate(['/home-restaurant'])
+
+    }
+  }
 
   signUpRoute() {
     this.router.navigate(['/signup-restaurant'])
@@ -41,7 +48,7 @@ export class LoginRestaurantComponent {
       (msg) => {
         if (msg.status === true) {
           alert(msg.message)
-          data.id = msg.id
+          localStorage.setItem('id', msg.id)
           this.router.navigate(['/home-restaurant'])
         }
         else {

@@ -1,5 +1,5 @@
 <header>
-    <img src="../../../assets/seta-esquerda.png" alt="">
+    <img (click)="goBack()" src="../../../assets/seta-esquerda.png" alt="">
     <h1>Configurações</h1>
 </header>
 
@@ -8,7 +8,7 @@
     <div class="user-info">
         <div class="user-info-content">
             <img src="../../../assets/pexels-horizon-content-3915907.jpg" alt="">
-            <h2>sm burger</h2>
+            <h2>{{nameRestaurant}}</h2>
         </div>
     </div>
 
@@ -17,7 +17,7 @@
     </div>
 
 
-    <form action="">
+    <form #updateDataForm='ngForm' (ngSubmit)="updateData(updateDataForm)">
         <div class="restaurant-data">
 
             <div>
@@ -32,7 +32,8 @@
                 </div>
 
                 <div class="new-info">
-                    <input type="text" placeholder="Digite o novo nome">
+                    <input type="text" name="restaurantName" [(ngModel)]="restaurantData.restaurantName"
+                        placeholder="Digite o novo nome">
                 </div>
 
             </div>
@@ -49,7 +50,8 @@
                 </div>
 
                 <div class="new-info">
-                    <input type="text" placeholder="Digite o novo e-mail">
+                    <input type="email" name="email" [(ngModel)]="restaurantData.email"
+                        placeholder="Digite o novo e-mail">
                 </div>
             </div>
 
@@ -65,7 +67,8 @@
                 </div>
 
                 <div class="new-info">
-                    <input type="number" placeholder="Digite o novo telefone">
+                    <input type="number" name="phone" [(ngModel)]="restaurantData.contact"
+                        placeholder="Digite o novo telefone">
                 </div>
             </div>
 
@@ -81,7 +84,8 @@
                 </div>
 
                 <div class="new-info">
-                    <input type="text" placeholder="Digite o novo endereço">
+                    <input type="text" name="address" [(ngModel)]="restaurantData.address"
+                        placeholder="Digite o novo endereço">
                 </div>
             </div>
 
@@ -97,12 +101,13 @@
                 </div>
 
                 <div class="new-info">
-                    <input type="number" placeholder="Digite o novo horário de funcionamento">
+                    <input type="text" name="time" [(ngModel)]="restaurantData.time"
+                        placeholder="Digite o novo horário de funcionamento">
                 </div>
             </div>
 
-            <div type="submit" class="edit-btn">
-                <button>salvar alterações</button>
+            <div class="edit-btn">
+                <button type="submit">salvar alterações</button>
             </div>
 
         </div>
