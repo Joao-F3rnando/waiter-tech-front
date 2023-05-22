@@ -112,18 +112,17 @@ input {
 .small-input {
     width: 288px;
     height: 32px;
-    font-size: 17px;
+    font-size: 20px;
 }
 
 .large-input {
     width: 288px;
     height: 90px;
+    font-size: 20px;
+    padding-top: -30px;
+    align-items: start;
 }
 
-.large-input input{
-    padding: -100px;
-    align-items: flex-start;
-}
 
 ::placeholder {
     display: flex;
@@ -131,7 +130,7 @@ input {
     white-space: pre-wrap;
     line-height: 2.5px;
     text-align: start;
-    font-size: 15px;
+    font-size: 18px;
     margin: 0;
     padding: 0;
 }
@@ -140,6 +139,15 @@ input {
     position: absolute;
     padding: 10px 0;
 }
+
+/* input[type=file]{
+    display: none;
+} */
+
+.img-input{
+    background-color: rgba(217, 217, 217, 0.44);
+}
+/* CONTINUAR A FAKE DIV PARA ESTILIZAR O INPUT DE IMAGEM*/
 
 /* CONFIG CHECKBOX E CHECKMARK*/
 

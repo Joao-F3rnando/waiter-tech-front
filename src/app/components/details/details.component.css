@@ -76,6 +76,10 @@ h1 {
     height: 40px;
 }
 
+.less{
+    padding-bottom: 5px;
+}
+
 /* DESCRIÇÃO */
 
 .dish-details {
@@ -84,10 +88,11 @@ h1 {
     margin-bottom: 24px;
 }
 
-p {
-    font-size: 14px;
+.dish-detais p {
+    font-size: 16px;
     font-weight: 100;
     margin-bottom: 24px;
+    margin-left: 10px;
 }
 
 .more-details {
@@ -99,6 +104,8 @@ p {
 
 span {
     font-size: 20px;
+    word-wrap: break-word;
+    white-space: break-spaces;
 }
 
 .add-obs {
@@ -113,6 +120,9 @@ input {
     border-radius: 13px;
     word-wrap: break-word;
     padding: 0 0 0 15px;
+    font-size: 18px;
+    word-wrap: break-word;
+    white-space: break-spaces;
 }
 
 .large-input {
@@ -126,9 +136,11 @@ input {
     white-space: pre-wrap;
     line-height: 2.5px;
     text-align: start;
-    font-size: 15px;
+    font-size: 16px;
     margin: 0;
     padding: 0;
+    word-wrap: break-word;
+    white-space: break-spaces;
 }
 
 .large-input::placeholder {
@@ -153,4 +165,5 @@ input {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 22px;
+    margin-bottom: 10px;
 }

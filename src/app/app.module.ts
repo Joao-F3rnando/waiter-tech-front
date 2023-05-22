@@ -21,6 +21,8 @@ import { DetailsComponent } from './components/details/details.component';
 import { QrcodeComponent } from './components/qrcode/qrcode.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { CartComponent } from './components/cart/cart.component';
+import { OrderControlComponent } from './componets/order-control/order-control.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { MenuComponent } from './components/menu/menu.component';
     DetailsComponent,
     QrcodeComponent,
     HomeComponent,
-    MenuComponent
+    MenuComponent,
+    CartComponent,
+    OrderControlComponent
   ],
   imports: [
     BrowserModule,

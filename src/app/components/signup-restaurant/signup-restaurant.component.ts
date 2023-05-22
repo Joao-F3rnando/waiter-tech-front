@@ -24,7 +24,7 @@ export class SignupRestaurantComponent {
   }
 
   signUp(form: NgForm) {
-    const self: any = this;
+    const self: any = this
     $.post(`${route}/createAccount`,
       self.userData,
       function (msg) {

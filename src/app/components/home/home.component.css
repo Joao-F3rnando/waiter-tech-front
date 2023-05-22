@@ -1,31 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600&display=swap');
 
-html,
-body {
-    height: 100%;
-    margin: 0px;
-    padding: 0px;
-}
-
-* {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    letter-spacing: 1px;
-}
-
-body {
-    background-color: #F8EFEA;
-    margin-bottom: 80px;
-    height: 100vh;
-}
-
-#name {
+header {
     display: flex;
-    justify-content: center;
     align-items: center;
-    padding: 0 1%;
+    justify-content: space-between;
+}
+
+h1 {
+    text-align: center;
+    flex: 2;
+    text-transform: uppercase;
 }
 
 .container {
@@ -38,37 +21,33 @@ body {
 }
 
 .retangulo {
-    background-color: #B7E4C7;
-}
-
-.retangulo2 {
-    background-color: #95D5B2;
-}
-
-.retangulo3 {
-    background-color: #74C69D;
-}
-
-.container div {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 80%;
-    border-radius: 5%;
+    border-radius: 15px;
+    text-transform: uppercase;
+    height: 154px;
 }
 
-.h2pratos {
-    font-size: 135%;
+.verde1{
+    background-color: #B7E4C7;
 }
 
-.h2bebidas {
-    top: 8rem;
-    left: 35%;
-    font-size: 135%;
+.verde2 {
+    background-color: #95D5B2;
 }
 
-.h2sobremesa {
-    top: 8rem;
-    left: 15rem;
-    font-size: 135%;
+.verde3 {
+    background-color: #74C69D;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+img{
+    margin-top: 5px;
+    width: 105px;
+    height: 105px;
 }

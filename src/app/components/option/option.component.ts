@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import * as $ from 'jquery'
-import { data } from '../externalData';
 
 const route = "http://localhost:3000"
 
@@ -34,12 +33,12 @@ export class OptionComponent {
   constructor(private router: Router) { }
 
   async ngOnInit() {
-    if (data.id == '') {
+    this.userID = localStorage.getItem('id')
+    if (this.userID === null) {
       alert('Você não está logado!!!')
       this.router.navigate(['login-restaurant'])
     }
     else {
-      this.userID = data.id
       await $.post(`${route}/getRestaurantData`,
         { id: this.userID },
         (msg) => {
@@ -47,12 +46,18 @@ export class OptionComponent {
           this.restaurantData.restaurantName = msg.restaurant_name
           this.restaurantData.name = msg.restaurant_name
           this.restaurantData.email = msg.email
-          this.restaurantData.contact = msg.contact
+          this.restaurantData.contact = msg.contact.replace(/(\d{2})(\d{4,5})(\d{4})/, '($1) $2-$3')
           this.restaurantData.address = msg.address
           this.restaurantData.time = msg.time
         })
     }
-    console.log("AAAAA")
-    console.log(this.restaurantData)
+  }
+
+  goBack() {
+    this.router.navigate(['home-restaurant'])
+  }
+
+  editRoute() {
+    this.router.navigate(['option-edit'])
   }
 }
