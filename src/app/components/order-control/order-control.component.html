@@ -1,0 +1,28 @@
+<header>
+    <img (click)="goBack()" src="../../../assets/seta-esquerda.png" alt="">
+    <h1>Comanda</h1>
+</header>
+
+<div class="orders">
+    <h2>Controle de pedidos</h2>
+    <div *ngFor="let order of orders" class="background">
+        <div>
+            <div class="table">
+                <p>Mesa {{order.table}}</p>
+            </div>
+        </div>
+
+        <div class="content">
+            <div *ngFor="let dishe of order.dishes" class="item item-obs">
+                <div>
+                    <p class="dish">{{dishe.dishe}}</p>
+                    <span>{{dishe.obs}}</span>
+                </div>
+                <p class="unit">{{dishe.quantity}} un</p>
+            </div>
+            <div class="btn">
+                <button (click)="concludeItem(order.idOfDishe)">Concluído</button>
+            </div>
+        </div>
+    </div>
+</div>

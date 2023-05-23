@@ -34,4 +34,8 @@ export class HomeRestauranteComponent implements OnInit {
   optionRoute() {
     this.router.navigate(['/option'])
   }
+
+  controlRoute() {
+    this.router.navigate(['/order-control'])
+  }
 }
