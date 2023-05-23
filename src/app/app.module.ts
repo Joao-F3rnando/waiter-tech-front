@@ -22,7 +22,7 @@ import { QrcodeComponent } from './components/qrcode/qrcode.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { CartComponent } from './components/cart/cart.component';
-import { OrderControlComponent } from './componets/order-control/order-control.component';
+import { OrderControlComponent } from './components/order-control/order-control.component';
 
 @NgModule({
   declarations: [

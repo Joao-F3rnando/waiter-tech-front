@@ -16,6 +16,7 @@ import { LocalizacaoComponent } from './components/localizacao/localizacao.compo
 import { OptionComponent } from './components/option/option.component';
 import { OptionEditComponent } from './components/option-edit/option-edit.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { OrderControlComponent } from './components/order-control/order-control.component';
 
 const routes: Routes = [
   { path: '', component: LoginFormComponent },
@@ -33,7 +34,8 @@ const routes: Routes = [
   { path: 'procurar', component: ProcurarComponent },
   { path: 'qrcode', component: QrcodeComponent },
   { path: 'signup-restaurant', component: SignupRestaurantComponent },
-  { path: 'menu', component: MenuComponent }
+  { path: 'menu', component: MenuComponent },
+  { path: 'order-control', component: OrderControlComponent }
 ];
 
 @NgModule({
