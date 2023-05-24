@@ -11,32 +11,31 @@ const route = "http://localhost:3000"
 })
 export class OrderControlComponent {
   userID: any
-  orders: [] | undefined
-  // orders: [
-  //   {
-  //     table: number;
-  //     idOfDishe: number;
-  //     dishes: [
-  //       {
-  //         dishe: string;
-  //         obs: string;
-  //         quantity: number;
-  //       }
-  //     ];
-  //   }
-  // ] = [
-  //     {
-  //       table: 0,
-  //       idOfDishe: 0,
-  //       dishes: [
-  //         {
-  //           dishe: '',
-  //           obs: '',
-  //           quantity: 0,
-  //         }
-  //       ]
-  //     }
-  //   ]
+  orders: [
+    {
+      table: number;
+      idOfDishe: number;
+      dishes: [
+        {
+          dishe: string;
+          obs: string;
+          quantity: number;
+        }
+      ];
+    }
+  ] = [
+      {
+        table: 0,
+        idOfDishe: 0,
+        dishes: [
+          {
+            dishe: '',
+            obs: '',
+            quantity: 0,
+          }
+        ]
+      }
+    ]
   constructor(private router: Router) { }
 
   goBack() {
