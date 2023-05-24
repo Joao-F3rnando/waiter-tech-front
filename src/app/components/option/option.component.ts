@@ -60,4 +60,9 @@ export class OptionComponent {
   editRoute() {
     this.router.navigate(['option-edit'])
   }
+
+  logout() {
+    localStorage.removeItem('id')
+    this.router.navigate(['login-restaurant'])
+  }
 }

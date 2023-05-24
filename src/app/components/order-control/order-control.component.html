@@ -1,65 +1,27 @@
 <header>
-    <img src="../../../assets/seta-esquerda.png" alt="">
+    <img (click)="goBack()" src="../../../assets/seta-esquerda.png" alt="">
     <h1>Comanda</h1>
 </header>
 
 <div class="orders">
     <h2>Controle de pedidos</h2>
-    <div class="background">
+    <div *ngFor="let order of orders" class="background">
         <div>
             <div class="table">
-                <p>Mesa 1</p>
+                <p>Mesa {{order.board}}</p>
             </div>
         </div>
 
         <div class="content">
-            <div class="item">
+            <div *ngFor="let dishe of order.dishes" class="item item-obs">
                 <div>
-                    <p class="dish">Macarrão</p>
-                    
+                    <p class="dish">{{dishe.dish}}</p>
+                    <span>{{dishe.obs}}</span>
                 </div>
-                <p class="unit">1 un</p>
+                <p class="unit">{{dishe.quantity}} un</p>
             </div>
-
-            <div class="item item-obs">
-                <div class="obs-item">
-                    <p class="dish">Macarrão</p>
-                    <span>observação</span>
-                </div>
-                <p class="unit">1 un</p>
-            </div>
-             
             <div class="btn">
-                <button>Concluído</button>
-            </div>
-        </div>
-    </div>
-    <div class="background">
-        <div>
-            <div class="table">
-                <p>Mesa 1</p>
-            </div>
-        </div>
-
-        <div class="content">
-            <div class="item">
-                <div>
-                    <p class="dish">Macarrão com arroz</p>
-                    
-                </div>
-                <p class="unit">1 un</p>
-            </div>
-            
-            <div class="item item-obs">
-                <div class="obs-item">
-                    <p class="dish">Macarrão</p>
-                    <span>observação</span>
-                </div>
-                <p class="unit">1 un</p>
-            </div>
-             
-            <div class="btn">
-                <button>Concluído</button>
+                <button (click)="concludeItem(order.ID)">Concluído</button>
             </div>
         </div>
     </div>

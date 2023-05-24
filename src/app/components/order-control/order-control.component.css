@@ -15,7 +15,7 @@ h1 {
     text-transform: uppercase;
 }
 
-.orders{
+.orders {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,7 +25,7 @@ h1 {
 
 /* título da página */
 
-h2{
+h2 {
     text-transform: uppercase;
     color: #E0475B;
     display: flex;
@@ -34,7 +34,7 @@ h2{
 
 /* Configuração da comanda */
 
-.background{
+.background {
     background-color: #fff;
     border-radius: 10px;
     border: 1px solid rgba(141, 153, 174, 0.35);
@@ -44,11 +44,11 @@ h2{
     align-items: center;
 }
 
-.background div{
+.background div {
     display: flex;
 }
 
-.table{
+.table {
     background-color: #52B788;
     color: #fff;
     text-transform: uppercase;
@@ -65,7 +65,7 @@ h2{
     font-size: 18px;
 }
 
-.content{
+.content {
     display: flex;
     gap: 15px;
     flex-direction: column;
@@ -73,7 +73,7 @@ h2{
     align-items: center;
 }
 
-.item{
+.item {
     display: flex;
     flex-direction: row;
     gap: 5px;
@@ -86,40 +86,40 @@ h2{
     font-size: 23px;
 }
 
-.obs-item{
+.obs-item {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin: 0;
 }
 
-.dish{
+.dish {
     width: 190px;
     white-space: nowrap;
     word-wrap: break-word;
     margin: 0;
 }
 
-span{
+span {
     margin: 0;
     font-size: 18px;
     justify-content: flex-start;
 }
 
-.item-obs{
+.item-obs {
     height: 50px;
 }
 
 /* Configuração do botão de concluído o preparo*/
 
-.btn{
+.btn {
     display: flex;
     align-items: center;
     justify-self: center;
     font-weight: bold;
 }
 
-button{
+button {
     background-color: #FFDDE2;
     border: none;
     width: 130px;
