@@ -11,31 +11,16 @@ const route = "http://localhost:3000"
 })
 export class OrderControlComponent {
   userID: any
-  orders: [
-    {
-      table: number;
-      idOfDishe: number;
-      dishes: [
-        {
-          dishe: string;
-          obs: string;
-          quantity: number;
-        }
-      ];
-    }
-  ] = [
-      {
-        table: 0,
-        idOfDishe: 0,
-        dishes: [
-          {
-            dishe: '',
-            obs: '',
-            quantity: 0,
-          }
-        ]
-      }
-    ]
+  orders: {
+    board: number;
+    ID: number;
+    dishes: {
+      dish: string;
+      obs: string;
+      quantity: number;
+    }[];
+  }[] = []
+
   constructor(private router: Router) { }
 
   goBack() {
@@ -43,31 +28,6 @@ export class OrderControlComponent {
   }
 
   async ngOnInit() {
-    // this.orders =
-    //   [
-    //     {
-    //       table: 1,
-    //       idOfDishe: 1,
-    //       dishes:
-    //         [
-    //           {
-    //             dishe: 'Macarrão',
-    //             quantity: 1
-    //           },
-    //           {
-    //             dishe: 'Sopa',
-    //             obs: 'Quente',
-    //             quantity: 2
-    //           },
-    //           {
-    //             dishe: 'Suco de Laranja',
-    //             obs: 'Sem Gelo',
-    //             quantity: 2
-    //           }
-    //         ]
-    //     }
-    //   ]
-
     this.userID = localStorage.getItem('id')
     if (this.userID === null) {
       alert('Você não está logado!!!')
@@ -78,14 +38,16 @@ export class OrderControlComponent {
       await $.post(`${route}/getItensData`,
         { id: this.userID },
         (msg) => {
-          console.log(msg)
+          for (let i = 0; i < msg.length; i++) {
+            console.log(msg[i])
+            this.orders.push(msg[i])
+          }
         }
       )
     }
   }
 
   concludeItem(id: any) {
-    console.log(this.orders)
-    console.log(this.orders)
+    console.log(id)
   }
 }
