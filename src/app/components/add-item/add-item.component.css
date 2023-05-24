@@ -140,14 +140,27 @@ input {
     padding: 10px 0;
 }
 
-/* input[type=file]{
+input[type=file]{
     display: none;
-} */
+}
 
 .img-input{
-    background-color: rgba(217, 217, 217, 0.44);
+    background-color: rgba(217, 217, 217, 0.21);
+    width: 288px;
+    height: 42px;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-/* CONTINUAR A FAKE DIV PARA ESTILIZAR O INPUT DE IMAGEM*/
+
+.img-input label{
+    margin-top: 13px;
+}
+.search{
+    width: 18px;
+    margin-right: 15px;
+}
 
 /* CONFIG CHECKBOX E CHECKMARK*/
 

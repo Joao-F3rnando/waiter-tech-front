@@ -1,15 +1,31 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
+header img {
+    height: 30px;
+    margin-left: 20px;
+}
+
+h1 {
+    text-align: center;
+    flex: 2;
+    text-transform: uppercase;
+}
+
+/* Fim configuração header */
 
 .image_c {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 45px;
 }
 
 .image_cc {
-    height: 220px;
-    width: 220px;
+    height: 240px;
+    width: 260px;
     background-color: #FFDDE2;
     border: 6px solid #FFDDE2;
     border-radius: 6px;
@@ -41,4 +57,9 @@
     gap: 8px;
     align-items: center;
     font-weight: bolder;
+}
+
+.zap-img{
+    width: 21px;
+    height: 21px;
 }
