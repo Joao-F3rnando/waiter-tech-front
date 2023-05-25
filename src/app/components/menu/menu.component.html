@@ -1,11 +1,11 @@
-<header>
-    <img src="../../../assets/seta-esquerda.png" alt="">
+<header>    
+    <img (click)="goBack()" src="../../../assets/seta-esquerda.png" alt="">
     <h1>restaurante</h1>
-    <img src="../../../assets/shopping-cart.png" alt="">
+    <img (click)="goCart()" src="../../../assets/shopping-cart.png" alt="">
 </header>
 
 <div class="container">
-    <div class="background">
+    <div class="background" (click)="goDetails()">
         <div class="details">
             <img class="food-img" src="../../../assets/food (2).jpg" alt="">
 
@@ -16,7 +16,7 @@
             </div>
         </div>
     </div>
-    <div class="background">
+    <div class="background" (click)="goDetails()">
         <div class="details">
             <img class="food-img" src="../../../assets/food (2).jpg" alt="">
 

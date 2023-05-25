@@ -19,4 +19,9 @@ export class AddItemComponent {
       this.router.navigate(['login-restaurant'])
     }
   }
+
+  goBack(){
+    this.router.navigate(['/dishes'])
+  }
+
 }

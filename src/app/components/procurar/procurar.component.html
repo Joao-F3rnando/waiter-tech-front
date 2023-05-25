@@ -1,5 +1,7 @@
-
-
+<header>
+    <img (click)="goBack()" src="../../../assets/seta-esquerda.png" alt="">
+    <h1>busca</h1>
+</header>
 
 
 <div class="procurar"> 
@@ -13,7 +15,7 @@
 
   <div class="burgao">
 
-    <div class="burger">
+    <div (click)="goLocal()" class="burger">
         <img src="../assets/image 2.png">
         <div class="burgin">
             <h1>SM BURGER</h1>
@@ -21,7 +23,7 @@
         </div>
     </div>
 
-    <div class="burger">
+    <div (click)="goLocal()" class="burger">
         <img src="../assets/image 2.png">
         <div class="burgin">
             <h1>SM BURGER</h1>
@@ -29,7 +31,7 @@
         </div>
     </div>
 
-    <div class="burger">
+    <div (click)="goLocal()" class="burger">
         <img src="../assets/image 2.png">
         <div class="burgin">
             <h1>SM BURGER</h1>
