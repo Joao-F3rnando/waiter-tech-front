@@ -7,7 +7,9 @@
 
     <div class="user-info">
         <div class="user-info-content">
-            <img src="../../../assets/pexels-horizon-content-3915907.jpg" alt="">
+            <div>
+                <img src={{restaurantPhoto}} alt="">
+            </div>
             <h2>{{nameRestaurant}}</h2>
         </div>
     </div>
@@ -89,10 +91,16 @@
                 </div>
             </div>
 
+            <div>
+                <div class="new-info">
+                    <input type="file" (change)="inputFile($event)">
+                </div>
+            </div>
+
+
             <div class="edit-btn">
                 <button (click)="goBack()" type="submit">salvar alterações</button>
             </div>
-
         </div>
     </form>
 </div>

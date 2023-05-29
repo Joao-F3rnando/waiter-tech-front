@@ -23,6 +23,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { CartComponent } from './components/cart/cart.component';
 import { OrderControlComponent } from './components/order-control/order-control.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { OrderControlComponent } from './components/order-control/order-control.
     BrowserModule,
     AppRoutingModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

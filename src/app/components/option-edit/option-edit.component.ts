@@ -2,8 +2,13 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import * as $ from 'jquery'
+import { HttpClient } from '@angular/common/http';
 
 const route = "http://localhost:3000"
+
+class ImageSnippet {
+  constructor(public src: string, public file: File) { }
+}
 
 @Component({
   selector: 'app-option-edit',
@@ -11,6 +16,25 @@ const route = "http://localhost:3000"
   styleUrls: ['./option-edit.component.css']
 })
 export class OptionEditComponent {
+
+  constructor(private router: Router, private http: HttpClient) { }
+
+  restaurantPhoto = ''
+  selectedFile!: ImageSnippet;
+
+  inputFile(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    const files = inputElement.files;
+
+    if (files && files[0]) {
+      const foto = files[0];
+
+      const formData = new FormData();
+      formData.append('image', foto);
+      console.log(formData.get('image'))
+      this.http.post(`${route}/savePhoto`, formData).subscribe(msg => console.log(msg));
+    }
+  }
 
   userID: any
   nameRestaurant: any
@@ -32,8 +56,6 @@ export class OptionEditComponent {
       time: ''
     }
 
-  constructor(private router: Router) { }
-
   async ngOnInit() {
     this.userID = localStorage.getItem('id')
     if (this.userID === null) {
@@ -41,6 +63,7 @@ export class OptionEditComponent {
       this.router.navigate(['login-restaurant'])
     }
     else {
+      this.restaurantPhoto = 'https://drive.google.com/uc?export=view&id=1Pc37auHWcLKC6f86gc_GWtqW7DVxPfym'
       await $.post(`${route}/getRestaurantData`,
         { id: this.userID },
         (msg) => {
