@@ -13,4 +13,7 @@ export class QrcodeComponent {
     this.router.navigate(['/home'])
   }
 
+  goBack(){
+    this.router.navigate(['/'])
+  }
 }

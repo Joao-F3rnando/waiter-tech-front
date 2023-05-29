@@ -1,27 +1,84 @@
-h1,
-h5,
-p {
-    word-break: break-all;
-    font-family: 'Courier New', Courier, monospace;
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
 }
 
-div {
+header img {
+    height: 30px;
+    margin-left: 20px;
+    margin-right: 30px;
+}
+
+h1 {
     text-align: center;
-    background: #fdfdfd;
+    flex: 2;
+    text-transform: uppercase;
+    font-size: 20px;
 }
 
-button {
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    margin-bottom: 20px;
+/* Quadrado verde */
 
-    &disabled {
-        cursor: no-drop;
-    }
+.green-bg{
+    background-color: #DDE5B6;
+    border-radius: 75px 75px 0 0 ;
+    height: 500px;
+    margin-top: 50px;
+    padding-top: 50px;
 }
 
-.data {
-    background: antiquewhite;
-    border-radius: 5px;
+h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #192F01;
+}
+
+p{
+    color: #192F01;
+    font-size: 18px;
+    text-align: center;
+    margin: 60px 0;
+    font-weight: lighter;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+input{
+    width: 307px;
+    height: 58px;
+    border-radius: 10px;
+    border: none;
+    background-color: #F9F7F3;
+}
+
+input::placeholder{
+    text-align: center;
+    font-size: 22px;
+}
+
+.btn{
+    margin-top: 60px;
+    width: 307px;
+    height: 58px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(249, 247, 243, 0.75);
+    font-size: 30px;
+    color: #192F01;
+}
+
+.where{
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: lighter;
+    font-size: 14px;
 }

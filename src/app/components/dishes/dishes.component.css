@@ -4,7 +4,7 @@ header {
     justify-content: space-between;
 }
 
-header img {
+.return {
     height: 30px;
     margin-left: 20px;
 }
@@ -15,7 +15,27 @@ h1 {
     text-transform: uppercase;
 }
 
+.add-item{
+    background-color: #52B788;
+    margin-right: 15px;
+    border-radius: 25px;
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-item img{
+    width: 37px;
+    height: 37px;
+}
+
 /* DIVISÃO DO MENU */
+
+.content{ 
+    height: 100%;
+}
 
 .container{
     gap: 20px;
@@ -61,4 +81,11 @@ h2{
 
 .edit-delete, h2{
     margin-left: 10px;
+}
+
+/* Botão de adicionar */
+
+.btn{
+    display: flex;
+    justify-content: center;
 }

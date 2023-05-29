@@ -1,43 +1,49 @@
 <header>
-    <img (click)="goBack()" src="../../../assets/seta-esquerda.png" alt="">
+    <img (click)="goBack()" class="return" src="../../../assets/seta-esquerda.png" alt="">
     <h1>menu</h1>
+    <div class="add-item" (click)="goEdit()">
+        <img src="../../../assets/plus.png" >
+    </div>
 </header>
 
-<div class="container">
-    <div class="background">
-        <div class="details">
-            <img class="food-img" src="../../../assets/food (2).jpg" alt="">
-
-            <div class="option">
-                <h2>Toronto Burgerddddddddddd</h2>
-
-                <div class="buttons">
-                    <div>
-                        <img (click)="goEdit()" src="../../../assets/editar.png" alt="" class="edit-delete">
-                    </div>
-        
-                    <div>
-                        <img src="../../../assets/lixeira.png" alt="" class="edit-delete">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="details">
-            <img class="food-img" src="../../../assets/food (2).jpg" alt="">
-
-            <div class="option">
-                <h2>Toronto Burgerddddddddddd</h2>
-
-                <div class="buttons">
-                    <div>
-                        <img src="../../../assets/editar.png" alt="" class="edit-delete">
-                    </div>
-        
-                    <div>
-                        <img src="../../../assets/lixeira.png" alt="" class="edit-delete">
+<div class="content">
+    <div class="container">
+        <div class="background">
+            <div class="details">
+                <img class="food-img" src="../../../assets/food (2).jpg" alt="">
+    
+                <div class="option">
+                    <h2>Toronto Burgerddddddddddd</h2>
+    
+                    <div class="buttons">
+                        <div>
+                            <img (click)="goEdit()" src="../../../assets/editar.png" alt="" class="edit-delete">
+                        </div>
+            
+                        <div>
+                            <img src="../../../assets/lixeira.png" alt="" class="edit-delete">
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="details">
+                <img class="food-img" src="../../../assets/food (2).jpg" alt="">
+    
+                <div class="option">
+                    <h2>Toronto Burgerddddddddddd</h2>
+    
+                    <div class="buttons">
+                        <div>
+                            <img src="../../../assets/editar.png" alt="" class="edit-delete">
+                        </div>
+            
+                        <div>
+                            <img src="../../../assets/lixeira.png" alt="" class="edit-delete">
+                        </div>
+                    </div>
+                </div>
+            </div>        
         </div>
     </div>
+
 </div>

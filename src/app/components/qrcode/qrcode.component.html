@@ -1,6 +1,28 @@
-<!-- <qrcode [qrdata]="'Your data string'" [width]="500" [errorCorrectionLevel]="'M'"></qrcode> -->
+<header>    
+    <img (click)="goBack()" src="../../../assets/seta-esquerda.png" alt="">
+    <h1>código do restaurante</h1>
+</header>
 
-<label for="ID">ID:</label>
-<input type="text" name="ID">
+<div>
 
-<button (click)="goHome()" >Confirmar</button>
+    <div class="green-bg">
+
+        <h2>Confirmação</h2>
+
+        <p>Por favor, digite o código do restaurante</p>
+
+        <form action="">
+            <input type="text" name="ID" placeholder="Insira o código aqui">
+
+            <div>
+                <button class="btn" type="submit" (click)="goHome()">Confirmar</button>
+            </div>
+        </form>
+
+        <div class="where">
+            <span>Onde encontro o código?</span>
+        </div>
+
+    </div>
+
+</div>
