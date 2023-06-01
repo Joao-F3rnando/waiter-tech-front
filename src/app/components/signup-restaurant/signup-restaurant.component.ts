@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
-import * as $ from 'jquery';
+import { HttpClient } from '@angular/common/http';
 
 const route = "http://localhost:3000"
 
@@ -11,35 +10,29 @@ const route = "http://localhost:3000"
   styleUrls: ['./signup-restaurant.component.css']
 })
 export class SignupRestaurantComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   userData = {
     restaurantName: '',
     email: '',
     cpf_cnpj: '',
-    password: '',
-    address: '-',
-    contact: '-',
-    time: '-'
+    password: ''
   }
 
-  signUp(form: NgForm) {
-    const self: any = this
-    $.post(`${route}/createAccount`,
-      self.userData,
-      function (msg) {
-        if (msg.status === true) {
-          alert(msg.response)
-          self.router.navigate(['/login-restaurant'])
+  signUp() {
+    this.http.post(`${route}/createAccount`, this.userData).subscribe((msg: any) => {
+      if (msg.status === true) {
+        alert(msg.response)
+        this.router.navigate(['/login-restaurant'])
+      }
+      else {
+        if (msg === 'cpf_cnpj') {
+          alert('CPF/CNPJ já foi cadastrado no sistema. Por favor, use outro!')
         }
-        else {
-          if (msg === 'cpf_cnpj') {
-            alert('CPF/CNPJ já foi cadastrado no sistema. Por favor, use outro!')
-          }
-          else if (msg === 'email') {
-            alert('Email já foi cadastrado no sistema. Por favor, use outro!')
-          }
+        else if (msg === 'email') {
+          alert('Email já foi cadastrado no sistema. Por favor, use outro!')
         }
-      })
+      }
+    })
   }
 }

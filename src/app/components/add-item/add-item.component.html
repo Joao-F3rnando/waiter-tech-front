@@ -4,15 +4,16 @@
 </header>
 
 <div class="add-menu">
-    <form action="">
+    <form (ngSubmit)="addItem()">
         <div class="form-info">
             <label for="">Nome do prato</label>
-            <input type="text" placeholder="Ex: Salmão grelhado" class="small-input">
+            <input type="text" name="dishName" placeholder="Ex: Salmão grelhado" [(ngModel)]="itemData.dishName"
+                class="small-input">
         </div>
 
         <div class="form-info">
             <label for="">Descrição</label>
-            <input type="text"
+            <input type="text" name="description" [(ngModel)]="itemData.description"
                 placeholder="Ex: Salmão grelhado com arroz e salada de repolho de acompanhamento. Feijão opcional."
                 maxlength="100" class="large-input">
         </div>
@@ -21,11 +22,12 @@
             <div>
                 <label for="img-selection">Imagem</label>
                 <div class="img-input">
-                    <label for="img-selection">  <img class="search" src="../../../assets/lupa.png" alt=""> Selecionar imagem</label>
-                    <input id="img-selection" type="file"class="img-input">
+                    <label for="img-selection"> <img class="search" src="../../../assets/lupa.png"
+                            alt="">{{inputText}}</label>
+                    <input id="img-selection" type="file" name="file" (change)="inputFile($event)" class="img-input">
                 </div>
             </div>
-            
+
         </div>
 
         <div class="form-info">
@@ -34,13 +36,13 @@
 
             <div class="input-check">
 
-                <input type="checkbox">
-                <label for="">Prato</label>
+                <input type="checkbox" name="Prato" [(ngModel)]="isPrato">
+                <label for="Prato">Prato</label>
 
-                <input type="checkbox">
-                <label for="">Bebida</label>
+                <input type="checkbox" name="Bebida" [(ngModel)]="isBebida">
+                <label for="Bebida">Bebida</label>
 
-                <input type="checkbox">
+                <input type="checkbox" name="Sobremesa" [(ngModel)]="isSobremesa">
                 <label for="">Sobremesas</label>
 
             </div>
@@ -49,19 +51,20 @@
 
         <div class="form-info">
             <label for="">Valor em R$</label>
-            <input type="number" step="0.01" placeholder="Utilize vírgula para os centavos" class="small-input">
+            <input type="number" step="0.01" name="activated" [(ngModel)]="itemData.value"
+                placeholder="Utilize vírgula para os centavos" class="small-input">
         </div>
 
         <div class="show-yes-no">
             <label for="">Aparecer no cardápio?</label>
             <label class="switch">
-                <input type="checkbox">
+                <input type="checkbox" name="activated" [(ngModel)]="itemData.activated">
                 <span class="slider"></span>
             </label>
         </div>
 
         <div class="container">
-            <button (click)="goBack()" type="submit" class="btn">Salvar</button>
+            <button type="submit" class="btn">Salvar</button>
         </div>
     </form>
 </div>

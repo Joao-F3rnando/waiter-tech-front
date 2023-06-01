@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import * as $ from 'jquery'
+import { HttpClient } from '@angular/common/http';
 
 const route = "http://localhost:3000"
 
@@ -21,7 +21,7 @@ export class OrderControlComponent {
     }[];
   }[] = []
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   goBack() {
     this.router.navigate(['home-restaurant'])
@@ -35,19 +35,22 @@ export class OrderControlComponent {
     }
 
     else {
-      await $.post(`${route}/getItensData`,
-        { id: this.userID },
-        (msg) => {
-          for (let i = 0; i < msg.length; i++) {
-            console.log(msg[i])
-            this.orders.push(msg[i])
-          }
+      this.http.post(`${route}/getItensData`, { id: this.userID }).subscribe((msg: any) => {
+        for (let i = 0; i < msg.length; i++) {
+          this.orders.push(msg[i])
         }
-      )
+      })
     }
   }
 
-  concludeItem(id: any) {
-    console.log(id)
+  async concludeItem(id: any) {
+    this.http.post(`${route}/removeItem`,
+      {
+        idRestaurant: localStorage.getItem('id'),
+        board: id
+      }).subscribe((msg: any) => {
+        alert(msg)
+        window.location.reload()
+      })
   }
 }

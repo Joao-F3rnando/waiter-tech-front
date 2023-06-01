@@ -86,6 +86,11 @@ h2 {
     font-size: 23px;
 }
 
+.item div {
+    display: flex;
+    flex-direction: column;
+}
+
 .obs-item {
     display: flex;
     flex-direction: column;
@@ -109,6 +114,7 @@ span {
 .item-obs {
     height: 50px;
 }
+
 
 /* Configuração do botão de concluído o preparo*/
 

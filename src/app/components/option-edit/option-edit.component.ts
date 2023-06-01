@@ -6,10 +6,6 @@ import { HttpClient } from '@angular/common/http';
 
 const route = "http://localhost:3000"
 
-class ImageSnippet {
-  constructor(public src: string, public file: File) { }
-}
-
 @Component({
   selector: 'app-option-edit',
   templateUrl: './option-edit.component.html',
@@ -20,11 +16,10 @@ export class OptionEditComponent {
   constructor(private router: Router, private http: HttpClient) { }
 
   restaurantPhoto = ''
-  selectedFile!: ImageSnippet;
 
   inputFile(event: Event) {
-    const inputElement = event.target as HTMLInputElement;
-    const files = inputElement.files;
+    const inputElement = event.target as HTMLInputElement
+    const files = inputElement.files
 
     if (files && files[0]) {
       const foto = files[0];
@@ -63,7 +58,7 @@ export class OptionEditComponent {
       this.router.navigate(['login-restaurant'])
     }
     else {
-      this.restaurantPhoto = 'https://drive.google.com/uc?export=view&id=1Pc37auHWcLKC6f86gc_GWtqW7DVxPfym'
+      this.restaurantPhoto = 'https://drive.google.com/uc?export=view&id=1DBGw5tyRTCz538sQEBG2gB19d7BnOTCZ'
       await $.post(`${route}/getRestaurantData`,
         { id: this.userID },
         (msg) => {

@@ -140,11 +140,11 @@ input {
     padding: 10px 0;
 }
 
-input[type=file]{
+input[type=file] {
     display: none;
 }
 
-.img-input{
+.img-input {
     background-color: rgba(217, 217, 217, 0.21);
     width: 288px;
     height: 42px;
@@ -154,11 +154,11 @@ input[type=file]{
     align-items: center;
 }
 
-.img-input label{
+.img-input label {
     margin-top: 13px;
 }
 
-.search{
+.search {
     width: 18px;
     margin-right: 15px;
 }
@@ -169,6 +169,11 @@ input[type=file]{
 .input-check label {
     display: inline-block;
     margin-right: 10px;
+}
+
+.input-check div {
+    display: flex;
+    flex-direction: column;
 }
 
 input[type=checkbox] {

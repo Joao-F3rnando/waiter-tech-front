@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import * as $ from 'jquery'
+import { HttpClient } from '@angular/common/http';
 
 const route = "http://localhost:3000"
 
@@ -13,7 +13,7 @@ export class HomeRestauranteComponent implements OnInit {
 
   userID: any
   restaurantName: any
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   async ngOnInit() {
     this.userID = localStorage.getItem('id')
@@ -22,12 +22,9 @@ export class HomeRestauranteComponent implements OnInit {
       this.router.navigate(['login-restaurant'])
     }
     else {
-      await $.post(`${route}/getRestaurantName`,
-        { id: this.userID },
-        (msg) => {
-          console.log(msg)
-          this.restaurantName = msg.restaurant_name
-        })
+      this.http.post(`${route}/getRestaurantName`, { id: this.userID }).subscribe((msg: any) => {
+        this.restaurantName = msg.restaurant_name
+      })
     }
   }
 

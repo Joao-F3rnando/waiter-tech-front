@@ -8,7 +8,7 @@
         <span>Cadastre o seu Restaurante</span>
     </div>
 
-    <form #signUpForm='ngForm' (ngSubmit)="signUp(signUpForm)">
+    <form (ngSubmit)="signUp()">
         <div class="label">
             <div class="restaurantName">
                 <input name="restaurantName" type="text" [(ngModel)]="userData.restaurantName"
