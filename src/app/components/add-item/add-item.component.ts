@@ -20,11 +20,13 @@ export class AddItemComponent {
   isSobremesa = false
 
   itemData = {
+    idRestaurant: localStorage.getItem('id'),
     dishName: '',
     description: '',
     category: '',
     image: new FormData,
-    value: 0,
+    imageURL: '',
+    price: 0,
     activated: false
   }
 
@@ -42,15 +44,12 @@ export class AddItemComponent {
 
     if (files && files[0]) {
       const foto = files[0];
-
-      const formData = new FormData()
-      formData.append('image', foto)
       this.inputText = foto.name
-      this.itemData.image = formData
+      this.itemData.image.append('image', foto)
     }
   }
 
-  addItem() {
+  async addItem() {
     if (this.isPrato) {
       this.itemData.category = 'Prato'
     }
@@ -60,6 +59,14 @@ export class AddItemComponent {
     if (this.isSobremesa) {
       this.itemData.category = 'Sobremesa'
     }
+
+    this.http.post(`${route}/savePhoto`, this.itemData.image).subscribe((msg: any) => {
+      this.itemData.imageURL = msg
+      this.http.post(`${route}/addItemOnMenu`, this.itemData).subscribe((msg: any) => {
+        alert(msg)
+        window.location.reload()
+      })
+    })
   }
 
   goBack() {

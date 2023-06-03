@@ -15,7 +15,7 @@ h1 {
     text-transform: uppercase;
 }
 
-.add-item{
+.add-item {
     background-color: #52B788;
     margin-right: 15px;
     border-radius: 25px;
@@ -26,39 +26,39 @@ h1 {
     align-items: center;
 }
 
-.add-item img{
+.add-item img {
     width: 37px;
     height: 37px;
 }
 
 /* DIVISÃO DO MENU */
 
-.content{ 
+.content {
     height: 100%;
 }
 
-.container{
+.container {
     gap: 20px;
 }
 
-.background{
+.background {
     height: 113px;
 }
 
-.details{
+.details {
     display: flex;
     margin: 20px 10px;
     background-color: #F8EFEA;
 }
 
-.food-img{
+.food-img {
     width: 130px;
     height: 94px;
     margin: 10px 0;
     border-radius: 10px;
 }
 
-h2{
+h2 {
     font-size: 23px;
     text-transform: uppercase;
     width: 200px;
@@ -67,25 +67,26 @@ h2{
     text-overflow: ellipsis
 }
 
-.buttons{
+.buttons {
     display: flex;
     gap: 50px;
     align-items: center;
     justify-content: center;
 }
 
-.edit-delete{
+.edit-delete {
     width: 34px;
     height: 34px;
 }
 
-.edit-delete, h2{
+.edit-delete,
+h2 {
     margin-left: 10px;
 }
 
 /* Botão de adicionar */
 
-.btn{
+.btn {
     display: flex;
     justify-content: center;
 }

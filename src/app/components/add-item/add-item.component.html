@@ -4,7 +4,7 @@
 </header>
 
 <div class="add-menu">
-    <form (ngSubmit)="addItem()">
+    <form (ngSubmit)="addItem()" enctype="multipart/form-data">
         <div class="form-info">
             <label for="">Nome do prato</label>
             <input type="text" name="dishName" placeholder="Ex: Salmão grelhado" [(ngModel)]="itemData.dishName"
@@ -24,7 +24,7 @@
                 <div class="img-input">
                     <label for="img-selection"> <img class="search" src="../../../assets/lupa.png"
                             alt="">{{inputText}}</label>
-                    <input id="img-selection" type="file" name="file" (change)="inputFile($event)" class="img-input">
+                    <input id="img-selection" type="file" (change)="inputFile($event)" class="img-input">
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
 
         <div class="form-info">
             <label for="">Valor em R$</label>
-            <input type="number" step="0.01" name="activated" [(ngModel)]="itemData.value"
+            <input type="number" step="0.01" name="price" [(ngModel)]="itemData.price"
                 placeholder="Utilize vírgula para os centavos" class="small-input">
         </div>
 
