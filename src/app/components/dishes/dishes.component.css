@@ -2,6 +2,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 .return {
@@ -39,22 +40,29 @@ h1 {
 
 .container{
     gap: 20px;
+    padding: 0;
 }
 
 .background{
     height: 113px;
 }
 
+.option{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
 .details{
     display: flex;
-    margin: 20px 10px;
+    margin: 20px 10px 20px 0;
     background-color: #F8EFEA;
+    width: 100%;
 }
 
 .food-img{
     width: 130px;
     height: 94px;
-    margin: 10px 0;
+    margin: 10px 0 10px 10px;
     border-radius: 10px;
 }
 
@@ -88,4 +96,20 @@ h2{
 .btn{
     display: flex;
     justify-content: center;
+}
+
+/* Config modal*/
+
+.modal-content{
+    font-family: 'League Spartan', sans-serif;;
+}
+
+.btn-primary{
+    background-color: #E0475B;
+    color: #FFFFFF;
+    border: none;
+}
+
+.modal-body{
+    text-align: center;
 }

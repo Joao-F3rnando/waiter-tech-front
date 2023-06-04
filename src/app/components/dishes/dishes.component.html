@@ -21,7 +21,7 @@
                         </div>
             
                         <div>
-                            <img src="../../../assets/lixeira.png" alt="" class="edit-delete">
+                            <img type="button" src="../../../assets/lixeira.png" class="edit-delete" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         </div>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                         </div>
             
                         <div>
-                            <img src="../../../assets/lixeira.png" alt="" class="edit-delete">
+                            <img type="button" src="../../../assets/lixeira.png" alt="" class="edit-delete" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         </div>
                     </div>
                 </div>
@@ -46,4 +46,22 @@
         </div>
     </div>
 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Você tem certeza que deseja excluir?</h1>
+        </div>
+        <div class="modal-body">
+            Nome do prato que será excluído
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+          <button type="button" class="btn btn-primary">Excluir prato</button>
+        </div>
+      </div>
+    </div>
 </div>
