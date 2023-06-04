@@ -2,47 +2,30 @@
     <img (click)="goBack()" class="return" src="../../../assets/seta-esquerda.png" alt="">
     <h1>menu</h1>
     <div class="add-item" (click)="goEdit()">
-        <img src="../../../assets/plus.png" >
+        <img src="../../../assets/plus.png">
     </div>
 </header>
 
-<div class="content">
+<div class="content" *ngFor="let dish of dishs">
     <div class="container">
         <div class="background">
             <div class="details">
-                <img class="food-img" src="../../../assets/food (2).jpg" alt="">
-    
+                <img class="food-img" src={{dish.image}} alt="">
+
                 <div class="option">
-                    <h2>Toronto Burgerddddddddddd</h2>
-    
+                    <h2>{{dish.dish_name}}</h2>
+
                     <div class="buttons">
                         <div>
                             <img (click)="goEdit()" src="../../../assets/editar.png" alt="" class="edit-delete">
                         </div>
-            
+
                         <div>
                             <img type="button" src="../../../assets/lixeira.png" class="edit-delete" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="details">
-                <img class="food-img" src="../../../assets/food (2).jpg" alt="">
-    
-                <div class="option">
-                    <h2>Toronto Burgerddddddddddd</h2>
-    
-                    <div class="buttons">
-                        <div>
-                            <img src="../../../assets/editar.png" alt="" class="edit-delete">
-                        </div>
-            
-                        <div>
-                            <img type="button" src="../../../assets/lixeira.png" alt="" class="edit-delete" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        </div>
-                    </div>
-                </div>
-            </div>        
         </div>
     </div>
 
@@ -60,7 +43,7 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
-          <button type="button" class="btn btn-primary">Excluir prato</button>
+          <button type="button" class="btn btn-primary" (click)="deleteDish(dish.ID)">Excluir prato</button>
         </div>
       </div>
     </div>

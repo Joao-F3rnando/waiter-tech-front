@@ -44,7 +44,7 @@ export class OrderControlComponent {
   }
 
   async concludeItem(id: any) {
-    this.http.post(`${route}/removeItem`,
+    this.http.post(`${route}/removeDishControl`,
       {
         idRestaurant: localStorage.getItem('id'),
         board: id
