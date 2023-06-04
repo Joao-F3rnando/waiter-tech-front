@@ -31,11 +31,36 @@ h1 {
     padding: 5px;
 }
 
-.user-info-content img {
+.rest-img{
     width: 84px;
     height: 84px;
     border-radius: 47px;
     margin: 10px;
+}
+
+.img-container {
+    position: relative;
+    display: inline-block;
+}
+
+.edit-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 84px;
+    height: 84px;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 47px;
+}
+
+.edit-icon {
+    width: 60px;
+    height: 60px;
+    filter: invert(1);
 }
 
 h2 {
@@ -101,7 +126,7 @@ p {
     margin-bottom: 7vh;
 }
 
-button {
+.save-changes {
     background-color: #FFDDE2;
     border: none;
     border-radius: 7px;
@@ -144,4 +169,25 @@ input {
 
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+/* Modal para confirmar se quer alterar ou não */
+
+.modal-header, .modal-footer{
+    border: none;
+}
+
+.modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn-primary {
+    background-color: #FFDDE2;
+    border: none;
+    border-radius: 7px;
+    color: #14213D;
+    font-size: 18px;
+    font-weight: 700;
 }

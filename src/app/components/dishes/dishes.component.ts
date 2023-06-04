@@ -19,6 +19,9 @@ export class DishesComponent {
     image: string
   }[] = []
 
+  dishNameModal: any
+  idDishModal: any
+
   async ngOnInit() {
     this.userID = localStorage.getItem('id')
     if (this.userID === null) {
@@ -34,6 +37,11 @@ export class DishesComponent {
         console.log(this.dishs)
       })
     }
+  }
+
+  getData(name: any, id: any) {
+    this.dishNameModal = name
+    this.idDishModal = id
   }
 
   async deleteDish(id: any) {

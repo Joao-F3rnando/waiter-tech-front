@@ -7,8 +7,14 @@
 
     <div class="user-info">
         <div class="user-info-content">
-            <div>
-                <img src={{restaurantPhoto}} alt="">
+            <div class="img-container">
+                <img class="rest-img" src={{restaurantPhoto}} alt="">
+                <div class="edit-overlay">
+                    <label for="img-upload">
+                        <img type="button" class="edit-icon" src="../../../assets/camera preta.png" alt="Editar imagem">
+                    </label>
+                    <input accept="image/jpeg, image/png" (change)="changeImage($event)" id="img-upload" type="file" style="display: none">
+                </div>
             </div>
             <h2>{{nameRestaurant}}</h2>
         </div>
@@ -90,16 +96,25 @@
                 </div>
             </div>
 
-            <div>
-                <div class="new-info">
-                    <input type="file" (change)="inputFile($event)">
-                </div>
-            </div>
-
 
             <div class="edit-btn">
-                <button type="submit">salvar alterações</button>
+                <button class="save-changes" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">salvar alterações</button>
             </div>
         </div>
     </form>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Você tem certeza que deseja fazer as alterações?</h1>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-primary">Salvar alterações</button>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -17,7 +17,7 @@ export class OptionEditComponent {
 
   restaurantPhoto = ''
 
-  inputFile(event: Event) {
+  changeImage(event: Event) {
     const inputElement = event.target as HTMLInputElement
     const files = inputElement.files
 
@@ -98,6 +98,7 @@ export class OptionEditComponent {
     value = value.replace(/(\d)(\d{4})$/, "$1-$2");
     return value;
   };
+
 
 }
 
