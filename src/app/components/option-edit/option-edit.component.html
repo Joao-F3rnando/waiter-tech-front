@@ -52,8 +52,7 @@
                 </div>
 
                 <div class="new-info">
-                    <input type="number" name="phone" [(ngModel)]="restaurantData.contact"
-                        placeholder="Digite o novo telefone">
+                    <input type="tel" name="phone" [(ngModel)]="restaurantData.contact" maxlength="15" placeholder="Digite o telefone" (keypress)="handlePhone($event)">
                 </div>
             </div>
 
