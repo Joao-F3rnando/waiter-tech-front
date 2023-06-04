@@ -39,27 +39,32 @@ body {
     border: none;
 }
 
-input::placeholder{
+input::placeholder {
     color: #192F01;
     font-size: 16px;
 }
 
 
-.burgao {
+.restaurants {
     display: flex;
     flex-direction: column;
     gap: 27px;
 }
 
-.burger {
+.restaurant {
     box-sizing: border-box;
     display: flex;
-    justify-content:left;
+    justify-content: left;
     background-color: #F8EFEA;
     padding: 16px;
 }
 
-.burgin {
+.data {
     margin: 26px;
     font-weight: bolder;
+}
+
+.restaurants img {
+    width: 130px;
+    height: 130px;
 }

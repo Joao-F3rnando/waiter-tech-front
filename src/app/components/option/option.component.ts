@@ -49,6 +49,7 @@ export class OptionComponent {
           this.restaurantData.contact = msg.contact.replace(/(\d{2})(\d{4,5})(\d{4})/, '($1) $2-$3')
           this.restaurantData.address = msg.address
           this.restaurantData.time = msg.time
+          this.restaurantData.photo = `https://drive.google.com/uc?export=view&id=${msg.image}`
         })
     }
   }
