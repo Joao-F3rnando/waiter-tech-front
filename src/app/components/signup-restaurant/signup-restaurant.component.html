@@ -21,7 +21,8 @@
                 <input name="cpf_cnpj" type="text" [(ngModel)]="userData.cpf_cnpj" placeholder="CPF/CNPJ">
             </div>
             <div class="password">
-                <input name="password" type="password" [(ngModel)]="userData.password" placeholder="Senha">
+                <input name="password" type="password" [(ngModel)]="userData.password" placeholder="Senha" [(ngModel)]="senha" name="senha" (keypress)="verifyPassword()">
+                <span class="tooltip">A sua senha deve conter pelo menos 8 caracteres, sendo eles: letra maiúscula, minúscula, numeros e caractere especial</span>
             </div>
 
             <div class="button">

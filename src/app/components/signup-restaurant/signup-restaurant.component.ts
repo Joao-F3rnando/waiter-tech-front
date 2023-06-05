@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http';
 
 const route = "http://localhost:3000"
 
+
+
 @Component({
   selector: 'app-signup-restaurant',
   templateUrl: './signup-restaurant.component.html',
@@ -11,6 +13,9 @@ const route = "http://localhost:3000"
 })
 export class SignupRestaurantComponent {
   constructor(private router: Router, private http: HttpClient) { }
+
+
+
 
   userData = {
     restaurantName: '',
@@ -35,4 +40,17 @@ export class SignupRestaurantComponent {
       }
     })
   }
+
+  senha!: string;
+
+  verifyPassword(): void {
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+    if(passwordRegex.test(this.senha)) {
+      console.log('A senha atende aos requisitos');
+    } else {
+      console.log('A senha não atende aos requisitos');
+    }
+  }
+
 }

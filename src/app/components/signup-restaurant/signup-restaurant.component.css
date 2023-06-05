@@ -60,3 +60,11 @@ form {
     background-color: rgba(25, 47, 1, 0.88);
     color: #F8EFEA;
 }
+
+/* Tooltip */
+
+.tooltip {
+    display: block;
+    color: #E0475B;
+    font-size: 12px;
+}
