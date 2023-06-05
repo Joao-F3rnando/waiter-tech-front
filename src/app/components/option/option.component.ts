@@ -42,7 +42,6 @@ export class OptionComponent {
       await $.post(`${route}/getRestaurantData`,
         { id: this.userID },
         (msg) => {
-          console.log(msg)
           this.restaurantData.restaurantName = msg.restaurant_name
           this.restaurantData.name = msg.restaurant_name
           this.restaurantData.email = msg.email

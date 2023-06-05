@@ -7,33 +7,32 @@
 
     <div class="content">
         <div class="order">
-            <p class="dish-info">Macarrão ao molho branco</p>
-            <img src="../../../assets/food (2).jpg" class="dish-choice">
-            <p class="dish-info">R$ 25,90</p>
+            <p class="dish-info">{{dish.dish_name}}</p>
+            <img src={{dish.image}} class="dish-choice">
+            <p class="dish-info">{{dish.price}}</p>
         </div>
     </div>
 
     <div class="counter">
-        <button class="less-more less">-</button>
-        <span>1</span>
-        <button class="less-more">+</button>
+        <button class="less-more less" (click)="decreaseAmount()">-</button>
+        <span>{{quantity}}</span>
+        <button class="less-more" (click)="increaseAmount()">+</button>
     </div>
 
     <div class="dish-details">
         <p>Descrição</p>
 
         <div class="more-details">
-            <span>Macarrão ao molho branco, tomate e torrada wwwwwwwwwwwwwwww wwwwwww wwwwwww wwww wwwwww wwwwww</span>
+            <span>{{dish.description}}</span>
         </div>
 
     </div>
 
     <div class="add-obs">
-        <input type="text" placeholder="Observações: por exemplo, remover cebola" class="large-input">
+        <input type="text" placeholder="Observações: por exemplo, remover cebola" [(ngModel)]="obs" class="large-input">
     </div>
 
     <div class="finish-info">
-        <button (click)="goBack()" type="submit" class="btn">adicionar</button>
+        <button (click)="addToCart()" type="submit" class="btn">adicionar</button>
     </div>
-
 </div>

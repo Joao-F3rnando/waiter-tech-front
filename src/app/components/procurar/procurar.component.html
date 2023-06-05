@@ -4,7 +4,7 @@
 </header>
 
 
-<div class="procurar" (keyup.enter)="teste()">
+<div class="procurar" (keyup.enter)="searchFunction()">
     <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-search"
         viewBox="0 0 16 16">
         <path
@@ -15,12 +15,14 @@
 
 <h1 class="restaurantes">RESTAURANTES CADASTRADOS</h1>
 
-<div class="restaurants" *ngFor="let restaurant of restaurants">
-    <div (click)="goLocal()" class="restaurant">
-        <img src={{restaurant.restaurantImage}}>
-        <div class="data">
-            <h1>{{restaurant.restaurantName}}</h1>
-            <p>{{restaurant.restaurantPhone}}</p>
+<div class="content">
+    <div class="restaurants" *ngFor="let restaurant of restaurants">
+        <div (click)="goLocal(restaurant.ID)" class="restaurant">
+            <img src={{restaurant.image}}>
+            <div class="data">
+                <h1>{{restaurant.restaurant_name}}</h1>
+                <p>{{restaurant.contact}}</p>
+            </div>
         </div>
     </div>
 </div>

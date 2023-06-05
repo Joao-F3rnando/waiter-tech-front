@@ -5,28 +5,26 @@
 
 <div>
     <div class="image_c">
-        <img src="../../../assets/fachada.png" class="image_cc">
+        <img src={{restaurantData.photo}} class="image_cc">
     </div>
-    
-    <h1 class="titulo">SM BURGER</h1>
-    
-    <p class="endereco">Av Paulista, 103</p>
-    
-    
+
+    <h1 class="titulo">{{restaurantData.restaurantName}}</h1>
+
+    <p class="endereco">{{restaurantData.address}}</p>
+
+
     <div class="funcionamento">
         <h2>Funcionamento</h2>
-        <p>Terça a Domingo | 16h às 23h59</p>
-        <p>Feriados | 16h às 21h</p>
+        <p>{{restaurantData.time}}</p>
     </div>
-    
+
     <div class="contato">
         <h2>Contato</h2>
-    
+
         <div class="image_w">
             <img class="zap-img" src="../../../assets/whatsapp-3.png">
-            <p style="margin: 0;">(11) 91234-5678</p>
+            <p style="margin: 0;">{{restaurantData.contact}}</p>
         </div>
-    
+
     </div>
 </div>
-

@@ -47,7 +47,6 @@ export class LoginRestaurantComponent implements OnInit {
       user,
       (msg) => {
         if (msg.status === true) {
-          alert(msg.message)
           localStorage.setItem('id', msg.id)
           this.router.navigate(['/home-restaurant'])
         }
