@@ -1,4 +1,4 @@
-<header>    
+<header>
     <img (click)="goBack()" src="../../../assets/seta-esquerda.png" alt="">
     <h1>código do restaurante</h1>
 </header>
@@ -12,10 +12,10 @@
         <p>Por favor, digite o código do restaurante</p>
 
         <form action="">
-            <input type="text" name="ID" placeholder="Insira o código aqui">
+            <input type="text" name="ID" [(ngModel)]="idRestaurant" placeholder="Insira o código aqui">
 
             <div>
-                <button class="btn" type="submit" (click)="goHome()">Confirmar</button>
+                <button class="btn" (click)="goRestaurantPage()">Confirmar</button>
             </div>
         </form>
 

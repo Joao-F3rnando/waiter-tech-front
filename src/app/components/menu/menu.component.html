@@ -1,29 +1,16 @@
-<header>    
+<header>
     <img (click)="goBack()" src="../../../assets/seta-esquerda.png" alt="">
     <h1>restaurante</h1>
     <img (click)="goCart()" src="../../../assets/shopping-cart.png" alt="">
 </header>
 
 <div class="container">
-    <div class="background" (click)="goDetails()">
+    <div class="background" (click)="goDetails(dish)" *ngFor="let dish of dishes">
         <div class="details">
-            <img class="food-img" src="../../../assets/food (2).jpg" alt="">
-
+            <img class="food-img" src={{dish.image}} alt="">
             <div class="text">
-                <h2>Toronto Burger</h2>
-                <p>Dois hambúrgueres de carne, molho especial, alface, queijo, molho de pepino, cebola em um pão com
-                    gergelim</p>
-            </div>
-        </div>
-    </div>
-    <div class="background" (click)="goDetails()">
-        <div class="details">
-            <img class="food-img" src="../../../assets/food (2).jpg" alt="">
-
-            <div class="text">
-                <h2>Toronto Burgerddddddddddd</h2>
-                <p>Dois hambúrgueres de carne, molho especial, alface, queijo, molho de pepino, cebola em um pão com
-                    gergelim</p>
+                <h2>{{dish.dish_name}}</h2>
+                <p>{{dish.description}}</p>
             </div>
         </div>
     </div>

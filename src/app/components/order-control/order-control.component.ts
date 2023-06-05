@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -12,22 +12,27 @@ const route = "http://localhost:3000"
 export class OrderControlComponent {
   userID: any
   orders: {
-    board: number;
-    ID: number;
+    board: number
+    ID: number
     dishes: {
-      dish: string;
-      obs: string;
-      quantity: number;
-    }[];
+      dish: string
+      obs: string
+      quantity: number
+    }[]
   }[] = []
 
-  constructor(private router: Router, private http: HttpClient) { }
+  timer: any
+  constructor(private router: Router, private http: HttpClient, private renderer: Renderer2) { }
 
   goBack() {
     this.router.navigate(['home-restaurant'])
   }
 
   async ngOnInit() {
+    this.timer = setTimeout(() => {
+      window.location.reload()
+    }, 30000)
+
     this.userID = localStorage.getItem('id')
     if (this.userID === null) {
       alert('Você não está logado!!!')
@@ -44,13 +49,17 @@ export class OrderControlComponent {
   }
 
   async concludeItem(id: any) {
+    clearTimeout(this.timer)
     this.http.post(`${route}/removeDishControl`,
       {
         idRestaurant: localStorage.getItem('id'),
         board: id
-      }).subscribe((msg: any) => {
-        alert(msg)
+      }).subscribe(() => {
         window.location.reload()
       })
+  }
+
+  ngOnDestroy() {
+    clearTimeout(this.timer);
   }
 }

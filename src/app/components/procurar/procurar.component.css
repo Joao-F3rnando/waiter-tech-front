@@ -44,17 +44,23 @@ input::placeholder {
     font-size: 16px;
 }
 
+.content {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
 
 .restaurants {
     display: flex;
     flex-direction: column;
-    gap: 27px;
+    justify-content: space-between;
 }
 
 .restaurant {
     box-sizing: border-box;
     display: flex;
-    justify-content: left;
+    justify-content: space-around;
+    align-items: center;
     background-color: #F8EFEA;
     padding: 16px;
 }
@@ -62,9 +68,11 @@ input::placeholder {
 .data {
     margin: 26px;
     font-weight: bolder;
+    text-align: center;
 }
 
 .restaurants img {
-    width: 130px;
-    height: 130px;
+    width: 100px;
+    height: 100px;
+    display: flex;
 }

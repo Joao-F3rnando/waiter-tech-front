@@ -19,7 +19,7 @@ h1 {
 
 /* CONFIGURAÇÕES ESTILOS DO CARRINHO */
 
-.shop{
+.shop {
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -31,49 +31,49 @@ h1 {
     padding-top: 80px;
 }
 
-.background{
+.background {
     background-color: rgba(127, 127, 127, 0.14);
     height: 110px;
     width: 95%;
     border-radius: 15px;
 }
 
-.content{
+.content {
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: row;
 }
 
-.food-img{
+.food-img {
     width: 100px;
     height: 80px;
     border-radius: 13px;
 }
 
-.delete{
+.delete {
     width: 35px;
     height: 35px;
 }
 
-.delete-x{
+.delete-x {
     margin: 0;
 }
 
-.qtd{
+.qtd {
     margin-left: 5px;
     font-size: 30px;
     margin-top: 30px;
 }
 
-h2{
+h2 {
     width: 95px;
     font-size: 20px;
     text-align: center;
     margin-top: 15px;
 }
 
-p{
+p {
     margin-top: 0;
     font-size: 23px;
     text-align: center;
@@ -81,7 +81,7 @@ p{
 
 /* Configuração total e botão de confirmação */
 
-.total{
+.total {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -89,14 +89,15 @@ p{
     margin: 25px 20px;
 }
 
-h3, span{
+h3,
+span {
     font-size: 30px;
     color: #8D99AE;
     text-transform: uppercase;
     font-weight: lighter;
 }
 
-.add-order{
+.add-order {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -117,22 +118,22 @@ h3, span{
 
 /* Modal */
 
-.modal-body{
+.modal-body {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
 
-.ok{
+.ok {
     width: 200px;
 }
 
-.confirmation{
+.confirmation {
     font-size: 22px;
 }
 
-.modal-footer{
+.modal-footer {
     display: flex;
     align-items: center;
     justify-content: center;

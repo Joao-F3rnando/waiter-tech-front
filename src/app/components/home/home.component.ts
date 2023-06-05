@@ -1,5 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+
+const route = "http://localhost:3000"
 
 @Component({
   selector: 'app-home',
@@ -7,18 +10,32 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  teste() {
-    alert("AAA")
+
+  restaurantId: any
+  restaurantName: any
+  constructor(private router: Router, private http: HttpClient) { }
+
+  async ngOnInit() {
+    this.restaurantId = localStorage.getItem('idRestaurant')
+    if (this.restaurantId === null) {
+      this.router.navigate(['login-client'])
+    }
+    else {
+      this.http.post(`${route}/getRestaurantName`, { id: this.restaurantId }).subscribe((msg: any) => {
+        this.restaurantName = msg.restaurant_name
+      })
+    }
   }
 
-  constructor(private router: Router) { }
-
-  goCart(){
-    this.router.navigate(['/cart'])
+  goDishes(type: any) {
+    this.router.navigate(['/menu'], { queryParams: { type: type } })
   }
 
-  goBack(){
-    this.router.navigate(['/'])
+  goCart() {
+    this.router.navigate(['cart'])
   }
 
+  goBack() {
+    this.router.navigate(['login-client'])
+  }
 }

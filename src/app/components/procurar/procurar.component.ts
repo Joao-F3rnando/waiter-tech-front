@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+
+const route = "http://localhost:3000"
 
 @Component({
   selector: 'app-procurar',
@@ -7,31 +10,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./procurar.component.css']
 })
 export class ProcurarComponent {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   search: any
   restaurants:
     {
-      restaurantName: string,
-      restaurantImage: string,
-      restaurantPhone: string,
-      restaurantID: number
+      restaurant_name: string,
+      image: string,
+      contact: string,
+      ID: number
     }[] = []
 
 
-  async teste() {
-    const teste =
-    {
-      restaurantName: this.search,
-      restaurantImage: 'https://drive.google.com/uc?export=view&id=1DBGw5tyRTCz538sQEBG2gB19d7BnOTCZ',
-      restaurantPhone: '(11 98292-8496)',
-      restaurantID: 12
-    }
-
-    this.restaurants.push(teste)
+  async searchFunction() {
+    this.restaurants = []
+    this.http.post(`${route}/searchRestaurants`, { search: this.search }).subscribe((msg: any) => {
+      for (let i = 0; i < msg.length; i++) {
+        msg[i].image = `https://drive.google.com/uc?export=view&id=${msg[i].image}`
+        msg[i].contact = msg[i].contact.replace(/(\d{2})(\d{4,5})(\d{4})/, '($1) $2-$3')
+        this.restaurants.push(msg[i])
+      }
+    })
   }
-  goLocal() {
-    this.router.navigate(['/localizacao'])
+  goLocal(id: any) {
+    this.router.navigate(['/localizacao'], { queryParams: { id: id } })
   }
 
   goBack() {

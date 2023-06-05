@@ -13,7 +13,7 @@ export class LoginClientComponent {
     this.router.navigate(['procurar'])
   }
 
-  qrcodeNavigate() {
+  codeRestaurant() {
     this.router.navigate(['qrcode'])
   }
 }
