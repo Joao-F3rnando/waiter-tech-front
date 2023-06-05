@@ -16,4 +16,8 @@ export class LoginClientComponent {
   codeRestaurant() {
     this.router.navigate(['qrcode'])
   }
+
+  goBack() {
+    this.router.navigate(['/'])
+  }
 }

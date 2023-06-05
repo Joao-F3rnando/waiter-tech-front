@@ -1,3 +1,15 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
 .illustration{
     display: flex;
     align-items: center;

@@ -13,9 +13,9 @@
 
         <div class="form-info">
             <label for="">Descrição</label>
-            <input type="text" name="description" [(ngModel)]="itemData.description"
-                placeholder="Ex: Salmão grelhado com arroz e salada de repolho de acompanhamento. Feijão opcional."
-                maxlength="100" class="large-input">
+            <textarea name="" id="" cols="30" rows="10"type="text" name="description" [(ngModel)]="itemData.description"
+            placeholder="Ex: Salmão grelhado com arroz e salada de repolho de acompanhamento. Feijão opcional."
+            maxlength="100" class="large-input"></textarea>
         </div>
 
         <div class="form-info">
@@ -36,13 +36,13 @@
 
             <div class="input-check">
 
-                <input type="checkbox" name="Prato" [(ngModel)]="isPrato">
+                <input type="radio" name="option" value="Prato" [(ngModel)]="isPrato">
                 <label for="Prato">Prato</label>
 
-                <input type="checkbox" name="Bebida" [(ngModel)]="isBebida">
+                <input type="radio" name="option" value="Bebida" [(ngModel)]="isBebida">
                 <label for="Bebida">Bebida</label>
 
-                <input type="checkbox" name="Sobremesa" [(ngModel)]="isSobremesa">
+                <input type="radio" name="option" value="Sobremesa" [(ngModel)]="isSobremesa">
                 <label for="">Sobremesas</label>
 
             </div>

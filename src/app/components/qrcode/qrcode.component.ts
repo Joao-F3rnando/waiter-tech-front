@@ -25,6 +25,6 @@ export class QrcodeComponent {
   }
 
   goBack() {
-    this.router.navigate(['/'])
+    this.router.navigate(['/login-client'])
   }
 }

@@ -1,3 +1,16 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header img {
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 25px;
+}
+
+
 .signup-restaurant div {
     display: flex;
     flex-direction: column;
@@ -6,9 +19,15 @@
     margin-bottom: 10px;
 }
 
+.theW {
+    padding: 0;
+    margin-top: -30px;
+}
+
 .image {
     width: 250px;
     height: 250px;
+    margin: 0;
 }
 
 .label-init {
@@ -20,6 +39,7 @@
     flex-direction: column;
     align-items: center;
     color: #192F01;
+    margin-top: -10px;
 }
 
 form {
@@ -47,18 +67,19 @@ form {
 }
 
 .button {
-    padding-top: 30px;
+    padding-top: 10px;
 }
 
 .restaurant-signup-button {
     width: 246.74px;
     height: 55px;
-    font-size: 32px;
+    font-size: 26px;
     border-radius: 10px;
     font-weight: 600;
     font-family: 'League Spartan', sans-serif;
     background-color: rgba(25, 47, 1, 0.88);
     color: #F8EFEA;
+    border: none;
 }
 
 /* Tooltip */

@@ -53,4 +53,8 @@ export class SignupRestaurantComponent {
     }
   }
 
+  goBack() {
+    this.router.navigate(['/'])
+  }
+
 }
