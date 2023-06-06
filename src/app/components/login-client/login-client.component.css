@@ -10,6 +10,13 @@ header img {
     margin-top: 25px;
 }
 
+.all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .illustration{
     display: flex;
     align-items: center;
@@ -50,12 +57,14 @@ button{
     height: 55px;
     font-size: 20px;
     font-weight: 400;
+    text-align: center;
 }
 
 .pink-button{
     background-color: rgba(224, 71, 91, 0.88);
     color: #F8EFEA;
-    padding: 5px;
+    line-height: 18px;
+    padding-top: 5px;
 }
 
 .light-green-button{

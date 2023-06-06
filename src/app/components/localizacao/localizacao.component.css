@@ -2,6 +2,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 10px;
 }
 
 header img {
@@ -13,6 +14,7 @@ h1 {
     text-align: center;
     flex: 2;
     text-transform: uppercase;
+    margin-top: 10px;
 }
 
 /* Fim configuração header */
@@ -24,11 +26,12 @@ h1 {
 }
 
 .image_cc {
-    height: 240px;
-    width: 260px;
+    height: 300px;
+    width: 300px;
     background-color: #FFDDE2;
     border: 6px solid #FFDDE2;
     border-radius: 6px;
+    margin: 10px 0;
 }
 
 .titulo {

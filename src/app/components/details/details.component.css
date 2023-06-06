@@ -13,12 +13,14 @@ h1 {
     text-align: center;
     flex: 2;
     text-transform: uppercase;
+    margin-top: 13px;
 }
 
 /* CONFIG IMAGEM E PREÇO DO PEDIDO */
 
 .general-content {
     width: 100%;
+    margin-top: 10px;
 }
 
 .content {
@@ -50,7 +52,10 @@ h1 {
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-top: 17px;
+    margin-bottom: 5px;
 }
+
 
 /* CONTADOR */
 
@@ -60,7 +65,7 @@ h1 {
     justify-content: center;
     margin-top: 16px;
     gap: 16px;
-    font-size: 30px;
+    font-size: 40px;
 }
 
 .less-more {
@@ -74,10 +79,11 @@ h1 {
     font-size: 40px;
     width: 40px;
     height: 40px;
+    padding-top: 8px;
 }
 
 .less{
-    padding-bottom: 5px;
+    padding-bottom: 8px;
 }
 
 /* DESCRIÇÃO */
@@ -89,7 +95,7 @@ h1 {
 }
 
 .dish-detais p {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 100;
     margin-bottom: 24px;
     margin-left: 10px;
@@ -114,20 +120,18 @@ span {
     align-items: center;
 }
 
-input {
+.large-input {
+    width: 314px;
+    height: 84px;
+    resize: none;
     border: none;
     color: #000;
     border-radius: 13px;
     word-wrap: break-word;
-    padding: 0 0 0 15px;
+    padding: 8px 0 0 15px;
     font-size: 18px;
     word-wrap: break-word;
     white-space: break-spaces;
-}
-
-.large-input {
-    width: 314px;
-    height: 84px;
 }
 
 ::placeholder {
@@ -136,7 +140,8 @@ input {
     white-space: pre-wrap;
     line-height: 2.5px;
     text-align: start;
-    font-size: 16px;
+    font-size: 18px;
+    line-height: 18px;
     margin: 0;
     padding: 0;
     word-wrap: break-word;
@@ -166,4 +171,26 @@ input {
     font-weight: bold;
     font-size: 22px;
     margin-bottom: 10px;
+}
+
+/* Modal */
+
+.modal-header {
+    border: none;
+}
+
+.modal-body {
+    font-size: 22px;
+    text-align: center;
+    display: flex;
+    flex-direction: space-evenly;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-body img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
 }
