@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import * as $ from 'jquery'
-
-const route = "http://localhost:3000"
+import { HttpClient } from '@angular/common/http';
+import { route } from 'src/app/app.component';
 
 @Component({
   selector: 'app-option',
@@ -30,7 +29,7 @@ export class OptionComponent {
       time: ''
     }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   async ngOnInit() {
     this.userID = localStorage.getItem('id')
@@ -39,9 +38,8 @@ export class OptionComponent {
       this.router.navigate(['login-restaurant'])
     }
     else {
-      await $.post(`${route}/getRestaurantData`,
-        { id: this.userID },
-        (msg) => {
+      this.http.post(`${route}/getRestaurantData`, { id: this.userID }).subscribe(
+        (msg: any) => {
           this.restaurantData.restaurantName = msg.restaurant_name
           this.restaurantData.name = msg.restaurant_name
           this.restaurantData.email = msg.email

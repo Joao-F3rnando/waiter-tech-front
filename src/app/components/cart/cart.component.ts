@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-
-const route = "http://localhost:3000"
+import { route } from 'src/app/app.component';
 
 @Component({
   selector: 'app-cart',
@@ -44,9 +43,9 @@ export class CartComponent {
   }
 
   order() {
-    this.http.post(`${route}/makeAOrder`, { order: this.orders, board: this.board }).subscribe((msg: any) => {
-      console.log(msg)
-    })
+    this.http.post(`${route}/makeAOrder`, { order: this.orders, board: this.board }).subscribe(msg => msg)
+    localStorage.removeItem('cartClient')
+    this.router.navigate(['/home'])
   }
 
   goBack() {

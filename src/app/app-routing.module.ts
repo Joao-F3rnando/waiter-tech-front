@@ -18,6 +18,7 @@ import { OptionEditComponent } from './components/option-edit/option-edit.compon
 import { MenuComponent } from './components/menu/menu.component';
 import { OrderControlComponent } from './components/order-control/order-control.component';
 import { CartComponent } from './components/cart/cart.component';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
 
 const routes: Routes = [
   { path: '', component: LoginFormComponent },
@@ -37,7 +38,8 @@ const routes: Routes = [
   { path: 'signup-restaurant', component: SignupRestaurantComponent },
   { path: 'menu', component: MenuComponent },
   { path: 'order-control', component: OrderControlComponent },
-  { path: 'cart', component: CartComponent }
+  { path: 'cart', component: CartComponent },
+  { path: 'edit-item', component: EditItemComponent }
 ];
 
 @NgModule({

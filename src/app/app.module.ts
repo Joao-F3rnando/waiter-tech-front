@@ -24,6 +24,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { CartComponent } from './components/cart/cart.component';
 import { OrderControlComponent } from './components/order-control/order-control.component';
 import { HttpClientModule } from '@angular/common/http';
+import { EditItemComponent } from './components/edit-item/edit-item.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     MenuComponent,
     CartComponent,
-    OrderControlComponent
+    OrderControlComponent,
+    EditItemComponent
   ],
   imports: [
     BrowserModule,

@@ -27,7 +27,8 @@ h1 {
 .user-info-content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
     padding: 5px;
 }
 
@@ -38,11 +39,11 @@ h1 {
     margin: 10px;
 }
 
-.titles{
-   display: flex;
-   justify-content: center;
-   align-items: center; 
-   flex-direction: column;
+.titles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 h2 {

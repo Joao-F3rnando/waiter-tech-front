@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-
-const route = "http://localhost:3000"
+import { route } from 'src/app/app.component';
 
 @Component({
   selector: 'app-add-item',
@@ -39,6 +38,7 @@ export class AddItemComponent {
   }
 
   inputFile(event: Event) {
+    this.itemData.image.delete('image')
     const inputElement = event.target as HTMLInputElement
     const files = inputElement.files
 
@@ -59,14 +59,20 @@ export class AddItemComponent {
     if (this.isSobremesa) {
       this.itemData.category = 'Sobremesa'
     }
-
-    this.http.post(`${route}/savePhoto`, this.itemData.image).subscribe((msg: any) => {
-      this.itemData.imageURL = msg
-      this.http.post(`${route}/addItemOnMenu`, this.itemData).subscribe((msg: any) => {
-        alert(msg)
-        window.location.reload()
+    if (this.itemData.dishName === '' || this.inputText === 'Selecionar imagem' || this.itemData.category === '' || this.itemData.price === 0) {
+      const span = document.getElementById('span') as HTMLInputElement
+      span.style.display = ''
+    }
+    else {
+      this.http.post(`${route}/savePhoto`, this.itemData.image).subscribe((msg: any) => {
+        this.itemData.imageURL = msg
+        this.http.post(`${route}/addItemOnMenu`, this.itemData).subscribe((msg: any) => {
+          alert(msg)
+          window.location.reload()
+        })
       })
-    })
+    }
+
   }
 
   goBack() {

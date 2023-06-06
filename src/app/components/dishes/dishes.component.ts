@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
-const route = "http://localhost:3000"
+import { route } from 'src/app/app.component';
 
 @Component({
   selector: 'app-dishes',
@@ -29,12 +28,11 @@ export class DishesComponent {
       this.router.navigate(['login-restaurant'])
     }
     else {
-      this.http.post(`${route}/getDishData`, { id: this.userID }).subscribe((msg: any) => {
+      this.http.post(`${route}/getDishesData`, { id: this.userID }).subscribe((msg: any) => {
         for (let i = 0; i < msg.length; i++) {
           msg[i].image = `https://drive.google.com/uc?export=view&id=${msg[i].image}`
           this.dishs.push(msg[i])
         }
-        console.log(this.dishs)
       })
     }
   }
@@ -50,8 +48,13 @@ export class DishesComponent {
       window.location.reload()
     })
   }
-  goEdit() {
+
+  goAdd() {
     this.router.navigate(['/add-item'])
+  }
+
+  goEdit(id: any) {
+    this.router.navigate(['/edit-item'], { queryParams: { id: id } })
   }
 
   goBack() {

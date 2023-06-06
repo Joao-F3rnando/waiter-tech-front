@@ -31,7 +31,7 @@ h1 {
     padding: 5px;
 }
 
-.rest-img{
+.rest-img {
     width: 84px;
     height: 84px;
     border-radius: 47px;
@@ -173,7 +173,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Modal para confirmar se quer alterar ou não */
 
-.modal-header, .modal-footer{
+.modal-header,
+.modal-footer {
     border: none;
 }
 

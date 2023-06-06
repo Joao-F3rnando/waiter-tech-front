@@ -1,7 +1,7 @@
 <header>
     <img (click)="goBack()" class="return" src="../../../assets/seta-esquerda.png" alt="">
     <h1>menu</h1>
-    <div class="add-item" (click)="goEdit()">
+    <div class="add-item" (click)="goAdd()">
         <img src="../../../assets/plus.png">
     </div>
 </header>
@@ -17,7 +17,7 @@
 
                     <div class="buttons">
                         <div>
-                            <img (click)="goEdit()" src="../../../assets/editar.png" alt="" class="edit-delete">
+                            <img (click)="goEdit(dish.ID)" src="../../../assets/editar.png" alt="" class="edit-delete">
                         </div>
 
                         <div>

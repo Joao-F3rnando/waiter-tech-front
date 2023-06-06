@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
-import * as $ from 'jquery';
-
-const route = "http://localhost:3000"
+import { HttpClient } from '@angular/common/http';
+import { route } from 'src/app/app.component';
 
 @Component({
   selector: 'app-login-restaurant',
@@ -12,7 +10,7 @@ const route = "http://localhost:3000"
 })
 
 export class LoginRestaurantComponent implements OnInit {
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   userID: any
   async ngOnInit() {
@@ -36,23 +34,21 @@ export class LoginRestaurantComponent implements OnInit {
     password: ''
   }
 
-  login(form: NgForm) {
+  login() {
     const user =
     {
       "email": this.userLogin.email,
       "password": this.userLogin.password
     }
 
-    $.post(`${route}/login`,
-      user,
-      (msg) => {
-        if (msg.status === true) {
-          localStorage.setItem('id', msg.id)
-          this.router.navigate(['/home-restaurant'])
-        }
-        else {
-          alert(msg)
-        }
-      })
+    this.http.post(`${route}/login`, { user: user }).subscribe((msg: any) => {
+      if (msg.status === true) {
+        localStorage.setItem('id', msg.id)
+        this.router.navigate(['/home-restaurant'])
+      }
+      else {
+        alert(msg)
+      }
+    })
   }
 }

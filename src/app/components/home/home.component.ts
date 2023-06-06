@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
-const route = "http://localhost:3000"
+import { route } from 'src/app/app.component';
 
 @Component({
   selector: 'app-home',

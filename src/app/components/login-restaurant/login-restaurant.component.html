@@ -8,7 +8,7 @@
         <span>Faça login em sua conta</span>
     </div>
 
-    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+    <form #loginForm="ngForm" (ngSubmit)="login()">
         <div class="label">
             <div class="email">
                 <input name="email" [(ngModel)]="userLogin.email" type="email" placeholder="Email">

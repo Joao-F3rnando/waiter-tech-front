@@ -4,10 +4,10 @@
 </header>
 
 <div class="add-menu">
-    <form (ngSubmit)="addItem()" enctype="multipart/form-data">
+    <form (ngSubmit)="editItem()" enctype="multipart/form-data">
         <div class="form-info">
             <label for="">Nome do prato</label>
-            <input type="text" name="dishName" placeholder="Ex: Salmão grelhado" [(ngModel)]="itemData.dishName"
+            <input type="text" name="dishName" placeholder="Ex: Salmão grelhado" [(ngModel)]="itemData.dish_name"
                 class="small-input">
         </div>
 
@@ -17,37 +17,6 @@
                 [(ngModel)]="itemData.description"
                 placeholder="Ex: Salmão grelhado com arroz e salada de repolho de acompanhamento. Feijão opcional."
                 maxlength="100" class="large-input"></textarea>
-        </div>
-
-        <div class="form-info">
-            <div>
-                <label for="img-selection">Imagem</label>
-                <div class="img-input">
-                    <label for="img-selection"> <img class="search" src="../../../assets/lupa.png"
-                            alt="">{{inputText}}</label>
-                    <input id="img-selection" type="file" (change)="inputFile($event)" class="img-input">
-                </div>
-            </div>
-
-        </div>
-
-        <div class="form-info">
-
-            <label for="">Categoria</label>
-
-            <div class="input-check">
-
-                <input type="radio" name="option" value="Prato" [(ngModel)]="isPrato">
-                <label for="Prato">Prato</label>
-
-                <input type="radio" name="option" value="Bebida" [(ngModel)]="isBebida">
-                <label for="Bebida">Bebida</label>
-
-                <input type="radio" name="option" value="Sobremesa" [(ngModel)]="isSobremesa">
-                <label for="">Sobremesas</label>
-
-            </div>
-
         </div>
 
         <div class="form-info">
@@ -65,7 +34,6 @@
         </div>
 
         <div class="container">
-            <span id="span" style="display: none; color: red;">Todos os campos devem aparecer</span>
             <button type="submit" class="btn">Salvar</button>
         </div>
     </form>

@@ -1,10 +1,7 @@
 import { Component } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import * as $ from 'jquery'
 import { HttpClient } from '@angular/common/http';
-
-const route = "http://localhost:3000"
+import { route } from 'src/app/app.component';
 
 @Component({
   selector: 'app-option-edit',
@@ -22,12 +19,16 @@ export class OptionEditComponent {
     const files = inputElement.files
 
     if (files && files[0]) {
-      const foto = files[0];
-
-      const formData = new FormData();
-      formData.append('image', foto);
-      console.log(formData.get('image'))
-      this.http.post(`${route}/savePhoto`, formData).subscribe(msg => console.log(msg));
+      const foto = files[0]
+      const formData = new FormData()
+      formData.append('image', foto)
+      this.http.post(`${route}/savePhoto`, formData).subscribe((msg: any) => {
+        this.http.post(`${route}/changePhoto`, { idRestaurant: localStorage.getItem('id'), idPhoto: msg }).subscribe((response: any) => {
+          if (response === true) {
+            this.router.navigate(['option'])
+          }
+        })
+      });
     }
   }
 
@@ -58,11 +59,10 @@ export class OptionEditComponent {
       this.router.navigate(['login-restaurant'])
     }
     else {
-      this.restaurantPhoto = 'https://drive.google.com/uc?export=view&id=1DBGw5tyRTCz538sQEBG2gB19d7BnOTCZ'
-      await $.post(`${route}/getRestaurantData`,
-        { id: this.userID },
-        (msg) => {
+      this.http.post(`${route}/getRestaurantData`, { id: this.userID }).subscribe(
+        (msg: any) => {
           this.nameRestaurant = msg.restaurant_name
+          this.restaurantPhoto = `https://drive.google.com/uc?export=view&id=${msg.image}`
         })
     }
   }
@@ -71,17 +71,14 @@ export class OptionEditComponent {
     this.router.navigate(['option'])
   }
 
-  async updateData(form: NgForm) {
-    const self: any = this
-    $.post(`${route}/updateData`,
-      self.restaurantData,
+  async updateData() {
+    this.http.post(`${route}/updateData`, { restaurantData: this.restaurantData }).subscribe(
       (msg) => {
         if (typeof msg === 'object') {
           alert("Não foi possível fazer as alterações. Verifique os campos, por favor")
         }
         else {
-          alert(msg)
-          self.router.navigate(['option'])
+          this.router.navigate(['option'])
         }
       })
   }
