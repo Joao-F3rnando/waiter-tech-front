@@ -29,10 +29,25 @@
     </div>
 
     <div class="add-obs">
-        <input type="text" placeholder="Observações: por exemplo, remover cebola" [(ngModel)]="obs" class="large-input">
+        <textarea name="" id="" cols="30" rows="10" type="text" placeholder="Observações: por exemplo, remover cebola" [(ngModel)]="obs" class="large-input"></textarea>
     </div>
 
     <div class="finish-info">
-        <button (click)="addToCart()" type="submit" class="btn">adicionar</button>
+        <button (click)="addToCart()" type="submit" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">adicionar</button>
     </div>
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src="../../../assets/wired-flat-139-basket.gif" alt="">
+          O item foi adicionado ao carrinho com sucesso!
+        </div>
+      </div>
+    </div>
+  </div>

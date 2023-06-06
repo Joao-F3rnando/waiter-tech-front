@@ -12,17 +12,42 @@
             </div>
         </div>
 
-        <div class="content">
-            <div *ngFor="let dishe of order.dishes" class="item item-obs">
+        <div class="content" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <div *ngFor="let dishe of order.dishes" class="item obs-item">
                 <div>
                     <p class="dish">{{dishe.dish}}</p>
                     <span>{{dishe.obs}}</span>
                 </div>
                 <p class="unit">{{dishe.quantity}} un</p>
             </div>
-            <div class="btn">
-                <button (click)="concludeItem(order.ID)">Concluído</button>
+            <div class="btn-ok">
+                <button class="concluido" (click)="concludeItem(order.ID)">Concluído</button>
             </div>
         </div>
     </div>
+
+    
 </div>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Detalhe do pedido</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="item-modal">
+                <div class="">
+                    <div class="name-unit">
+                        <p class="dish-modal">nome do prato</p>
+                        <p class="unit-modal">1 un</p>
+                    </div>
+                    <p class="detail-modal">o detalhezinho bonitinho cheio de informacoes para eu ver como fica e mais informacoes ainda só de zoas e colocando mais e mais</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

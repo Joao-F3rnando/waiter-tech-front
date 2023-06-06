@@ -2,12 +2,11 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 10px;
 }
 
 header img {
     height: 30px;
-    margin-left: 20px;
+    margin-left: 30px;
 }
 
 h1 {
@@ -21,14 +20,14 @@ h1 {
 
 .shop {
     display: flex;
-    align-items: center;
+    align-items: top;
     flex-direction: column;
     justify-content: center;
     gap: 15px;
-    margin-top: 30px;
-    max-height: 400px;
-    overflow-y: scroll;
-    padding-top: 80px;
+    margin-top: 10px;
+    margin-left: 10px;
+    overflow-y: auto;
+    flex: 0 0 calc(53% - 250px);
 }
 
 .background {
@@ -66,6 +65,13 @@ h1 {
     margin-top: 30px;
 }
 
+
+h2, p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 h2 {
     width: 95px;
     font-size: 20px;
@@ -86,7 +92,7 @@ p {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin: 25px 20px;
+    margin: 19px 20px;
 }
 
 h3,
@@ -113,7 +119,7 @@ span {
     text-transform: uppercase;
     font-weight: bold;
     font-size: 22px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
 }
 
 /* Modal */
@@ -123,6 +129,11 @@ span {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+.modal-body p {
+    white-space: normal;
+    width: 300px;
 }
 
 .ok {
@@ -137,4 +148,27 @@ span {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+/* Config mesa */
+
+.table-place {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.table-place label {
+    font-size: 20px;    
+    text-transform: uppercase;
+    color: #8D99AE;
+}
+
+.table-input {
+    width: 60px;
+    height: 40px;
+    border-radius: 10px;
+    border: rgba(141, 153, 173, 0.37);
+    padding-left: 25px;
+    color: #8D99AE;
 }
