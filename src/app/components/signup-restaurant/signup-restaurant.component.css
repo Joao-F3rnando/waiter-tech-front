@@ -89,3 +89,17 @@ form {
     color: #E0475B;
     font-size: 12px;
 }
+
+/* Alert config */
+
+.alert{ 
+    position: fixed;
+    top: 25px;
+    z-index: 999;
+    transition: opacity 0.5s ease-out;
+}
+
+svg{
+    width: 30px;
+    margin-right: 15px;
+}

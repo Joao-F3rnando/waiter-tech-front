@@ -192,3 +192,16 @@ input[type="number"]::-webkit-inner-spin-button {
     font-size: 18px;
     font-weight: 700;
 }
+
+/* Alert config */
+
+.alert{ 
+    position: fixed;
+    top: 25px;
+    z-index: 999;
+    transition: opacity 0.5s ease-out;
+}
+
+svg{
+    width: 30px;
+}

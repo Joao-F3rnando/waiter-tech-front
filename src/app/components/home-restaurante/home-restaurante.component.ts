@@ -39,4 +39,5 @@ export class HomeRestauranteComponent implements OnInit {
     this.router.navigate(['/dishes'])
   }
 
+
 }

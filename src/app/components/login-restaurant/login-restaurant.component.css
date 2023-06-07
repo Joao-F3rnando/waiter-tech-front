@@ -75,3 +75,16 @@ form {
     text-decoration: underline;
     color: #192F01;
 }
+
+/* Alert config */
+
+.alert{ 
+    position: fixed;
+    top: 25px;
+    z-index: 999;
+    transition: opacity 0.5s ease-out;
+}
+
+svg{
+    width: 30px;
+}
