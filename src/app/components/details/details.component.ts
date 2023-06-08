@@ -69,7 +69,6 @@ export class DetailsComponent {
       }
     )
     localStorage.setItem('cartClient', JSON.stringify(cart))
-    alert("Pedido adicionado ao carrinho")
     this.router.navigate(['/home'])
   }
 

@@ -12,7 +12,7 @@ export class CartComponent {
   constructor(private router: Router, private http: HttpClient) { }
 
   total: number | string = 0
-  board: number = 0
+  board: number = 1
   orders:
     {
       dish: string
@@ -43,7 +43,7 @@ export class CartComponent {
   }
 
   order() {
-    this.http.post(`${route}/makeAOrder`, { order: this.orders, board: this.board }).subscribe(msg => msg)
+    this.http.post(`${route}/makeAOrder`, { order: this.orders, board: this.board, total: this.total }).subscribe(msg => msg)
     localStorage.removeItem('cartClient')
     this.router.navigate(['/home'])
   }

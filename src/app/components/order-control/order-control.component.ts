@@ -12,6 +12,7 @@ export class OrderControlComponent {
   userID: any
   orders: {
     board: number
+    value: string
     ID: number
     dishes: {
       dish: string
@@ -20,7 +21,14 @@ export class OrderControlComponent {
     }[]
   }[] = []
 
+  modalInfos: {
+    dish: string
+    obs: string
+    quantity: number
+  }[] = []
+
   timer: any
+  timing: any = 10000
   constructor(private router: Router, private http: HttpClient, private renderer: Renderer2) { }
 
   goBack() {
@@ -28,13 +36,16 @@ export class OrderControlComponent {
   }
 
   async ngOnInit() {
-    this.timer = setTimeout(() => {
-      window.location.reload()
-    }, 30000)
+    const alert = document.getElementById('alert') as HTMLElement
+    if (alert != undefined) {
+      alert.hidden = true
+    }
+    this.startTimer()
 
     this.userID = localStorage.getItem('id')
     if (this.userID === null) {
-      alert('Você não está logado!!!')
+      alert.hidden = false
+      await new Promise(time => setTimeout(time, 4000))
       this.router.navigate(['login-restaurant'])
     }
 
@@ -58,7 +69,37 @@ export class OrderControlComponent {
       })
   }
 
-  ngOnDestroy() {
-    clearTimeout(this.timer);
+  modal(order: any) {
+    this.modalInfos = []
+    for (let i = 0; i < order.dishes.length; i++) {
+      if (order.dishes[i].obs != '') {
+        this.modalInfos.push(order.dishes[i])
+      }
+    }
+    clearTimeout(this.timer)
   }
+
+  haveObs(obs: any) {
+    if (obs) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
+  ngOnDestroy() {
+    clearTimeout(this.timer)
+  }
+
+  startTimer() {
+    this.timer = setTimeout(() => {
+      window.location.reload()
+    }, this.timing)
+  }
+
+  resetTimer() {
+    this.startTimer()
+  }
+
 }

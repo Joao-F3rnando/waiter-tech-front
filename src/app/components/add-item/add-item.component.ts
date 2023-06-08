@@ -30,9 +30,20 @@ export class AddItemComponent {
   }
 
   async ngOnInit() {
+    const alert = document.getElementById('alert') as HTMLElement
+    const success = document.getElementById('success') as HTMLElement
+    if (alert != undefined) {
+      alert.hidden = true
+    }
+
+    if (success != undefined) {
+      success.hidden = true
+    }
+
     this.userID = localStorage.getItem('id')
     if (this.userID === null) {
-      alert('Você não está logado!!!')
+      alert.hidden = false
+      await new Promise(time => setTimeout(time, 4000))
       this.router.navigate(['login-restaurant'])
     }
   }
@@ -66,9 +77,15 @@ export class AddItemComponent {
     else {
       this.http.post(`${route}/savePhoto`, this.itemData.image).subscribe((msg: any) => {
         this.itemData.imageURL = msg
-        this.http.post(`${route}/addItemOnMenu`, this.itemData).subscribe((msg: any) => {
-          alert(msg)
-          window.location.reload()
+        this.http.post(`${route}/addItemOnMenu`, this.itemData).subscribe(async (msg: any) => {
+          if (msg) {
+            const success = document.getElementById('success') as HTMLElement
+            if (success != undefined) {
+              success.hidden = false
+              await new Promise(time => setTimeout(time, 4000))
+              window.location.reload()
+            }
+          }
         })
       })
     }

@@ -47,12 +47,12 @@ h1 {
     height: 113px;
 }
 
-.option{
+.option {
     margin-top: 10px;
     margin-left: 10px;
 }
 
-.details{
+.details {
     display: flex;
     margin: 20px 10px 20px 0;
     background-color: #F8EFEA;
@@ -101,16 +101,30 @@ h2 {
 
 /* Config modal*/
 
-.modal-content{
-    font-family: 'League Spartan', sans-serif;;
+.modal-content {
+    font-family: 'League Spartan', sans-serif;
+    ;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: #E0475B;
     color: #FFFFFF;
     border: none;
 }
 
-.modal-body{
+.modal-body {
     text-align: center;
+}
+
+/* Alert config */
+
+.alert {
+    position: fixed;
+    top: 25px;
+    z-index: 999;
+    transition: opacity 0.5s ease-out;
+}
+
+svg {
+    width: 30px;
 }

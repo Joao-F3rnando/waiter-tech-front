@@ -66,7 +66,8 @@ h2 {
     font-size: 18px;
 }
 
-.table p, .unit {
+.table p,
+.unit {
     margin-top: 17px;
 }
 
@@ -109,13 +110,25 @@ h2 {
     margin: 0;
 }
 
+div .right {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
 span {
     margin: 0;
     font-size: 18px;
     justify-content: flex-start;
 }
 
+.final-value {
+    margin-top: 10px;
+}
 
+.final-value p {
+    margin: 0;
+}
 
 /* Configuração do botão de concluído o preparo*/
 
@@ -133,7 +146,7 @@ span {
     height: 30px;
     margin-bottom: 10px;
     border-radius: 10px;
-    font-size: 18px;    
+    font-size: 18px;
 }
 
 /* Modal */
@@ -156,7 +169,7 @@ span {
     min-width: fit-content;
 }
 
-.name-unit{
+.name-unit {
     display: flex;
     flex-direction: row;
     gap: 50px;
@@ -171,8 +184,8 @@ span {
     margin-top: 10px;
 }
 
-.dish-modal, 
-.unit-modal, 
+.dish-modal,
+.unit-modal,
 .detail-modal {
     margin: 0;
     display: flex;
@@ -180,4 +193,17 @@ span {
     justify-content: center;
     text-align: center;
     font-size: 20px;
+}
+
+/* Alert config */
+
+.alert {
+    position: fixed;
+    top: 25px;
+    z-index: 999;
+    transition: opacity 0.5s ease-out;
+}
+
+svg {
+    width: 30px;
 }

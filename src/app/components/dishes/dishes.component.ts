@@ -22,13 +22,18 @@ export class DishesComponent {
   idDishModal: any
 
   async ngOnInit() {
+    const alertLogin = document.getElementById('alertLogin') as HTMLElement
+    if (alertLogin != undefined) {
+      alertLogin.hidden = true
+    }
     this.userID = localStorage.getItem('id')
     if (this.userID === null) {
-      alert('Você não está logado!!!')
+      alertLogin.hidden = false
+      await new Promise(time => setTimeout(time, 4000))
       this.router.navigate(['login-restaurant'])
     }
     else {
-      this.http.post(`${route}/getDishesData`, { id: this.userID }).subscribe((msg: any) => {
+      this.http.post(`${route}/getDishesData`, { id: this.userID }).subscribe(async (msg: any) => {
         for (let i = 0; i < msg.length; i++) {
           msg[i].image = `https://drive.google.com/uc?export=view&id=${msg[i].image}`
           this.dishs.push(msg[i])
@@ -43,8 +48,7 @@ export class DishesComponent {
   }
 
   async deleteDish(id: any) {
-    this.http.post(`${route}/deleteDish`, { id: id }).subscribe((msg: any) => {
-      alert(msg)
+    this.http.post(`${route}/deleteDish`, { id: id }).subscribe(async (msg: any) => {
       window.location.reload()
     })
   }

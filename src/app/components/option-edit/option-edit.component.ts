@@ -53,9 +53,20 @@ export class OptionEditComponent {
     }
 
   async ngOnInit() {
+    const alert = document.getElementById('alert') as HTMLElement
+    const errorEdit = document.getElementById('errorEdit') as HTMLElement
+    if (alert != undefined) {
+      alert.hidden = true
+    }
+
+    if (errorEdit != undefined) {
+      errorEdit.hidden = true
+    }
+
     this.userID = localStorage.getItem('id')
     if (this.userID === null) {
-      alert('Você não está logado!!!')
+      alert.hidden = false
+      await new Promise(time => setTimeout(time, 4000))
       this.router.navigate(['login-restaurant'])
     }
     else {
@@ -73,9 +84,12 @@ export class OptionEditComponent {
 
   async updateData() {
     this.http.post(`${route}/updateData`, { restaurantData: this.restaurantData }).subscribe(
-      (msg) => {
+      async (msg) => {
         if (typeof msg === 'object') {
-          alert("Não foi possível fazer as alterações. Verifique os campos, por favor")
+          const errorEdit = document.getElementById('errorEdit') as HTMLElement
+          errorEdit.hidden = false
+          await new Promise(time => setTimeout(time, 4000))
+          errorEdit.hidden = true
         }
         else {
           this.router.navigate(['option'])

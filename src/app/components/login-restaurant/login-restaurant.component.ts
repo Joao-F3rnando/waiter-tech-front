@@ -14,6 +14,10 @@ export class LoginRestaurantComponent implements OnInit {
 
   userID: any
   async ngOnInit() {
+    const alert = document.getElementById('alert') as HTMLElement
+    if (alert != undefined) {
+      alert.hidden = true
+    }
     this.userID = localStorage.getItem('id')
     if (this.userID != null) {
       this.router.navigate(['/home-restaurant'])
@@ -41,13 +45,18 @@ export class LoginRestaurantComponent implements OnInit {
       "password": this.userLogin.password
     }
 
-    this.http.post(`${route}/login`, { user: user }).subscribe((msg: any) => {
+    this.http.post(`${route}/login`, { user: user }).subscribe(async (msg: any) => {
       if (msg.status === true) {
         localStorage.setItem('id', msg.id)
         this.router.navigate(['/home-restaurant'])
       }
       else {
-        alert(msg)
+        const alert = document.getElementById('alert') as HTMLElement
+        if (alert != undefined) {
+          alert.hidden = false
+          await new Promise(time => setTimeout(time, 2000))
+          alert.hidden = true
+        }
       }
     })
   }

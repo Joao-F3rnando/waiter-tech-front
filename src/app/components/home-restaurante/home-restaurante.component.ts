@@ -15,9 +15,15 @@ export class HomeRestauranteComponent implements OnInit {
   constructor(private router: Router, private http: HttpClient) { }
 
   async ngOnInit() {
+    const alert = document.getElementById('alert') as HTMLElement
+    if (alert != undefined) {
+      alert.hidden = true
+    }
+
     this.userID = localStorage.getItem('id')
     if (this.userID === null) {
-      alert('Você não está logado!!!')
+      alert.hidden = false
+      await new Promise(time => setTimeout(time, 4000))
       this.router.navigate(['login-restaurant'])
     }
     else {

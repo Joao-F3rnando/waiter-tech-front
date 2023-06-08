@@ -25,6 +25,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { OrderControlComponent } from './components/order-control/order-control.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditItemComponent } from './components/edit-item/edit-item.component';
+import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { EditItemComponent } from './components/edit-item/edit-item.component';
     MenuComponent,
     CartComponent,
     OrderControlComponent,
-    EditItemComponent
+    EditItemComponent,
+    PasswordRecoveryComponent
   ],
   imports: [
     BrowserModule,
