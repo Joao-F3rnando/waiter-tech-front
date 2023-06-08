@@ -24,9 +24,20 @@ export class EditItemComponent {
   }
 
   async ngOnInit() {
+    const alert = document.getElementById('alert') as HTMLElement
+    const success = document.getElementById('success') as HTMLElement
+    if (alert != undefined) {
+      alert.hidden = true
+    }
+
+    if (success != undefined) {
+      success.hidden = true
+    }
+
     this.userID = localStorage.getItem('id')
     if (this.userID === null) {
-      alert('Você não está logado!!!')
+      alert.hidden = false
+      await new Promise(time => setTimeout(time, 4000))
       this.router.navigate(['login-restaurant'])
     }
     else {
@@ -47,10 +58,14 @@ export class EditItemComponent {
   }
 
   editItem() {
-    this.http.post(`${route}/updateItem`, { data: this.itemData }).subscribe((msg: any) => {
+    const success = document.getElementById('success') as HTMLElement
+    this.http.post(`${route}/updateItem`, { data: this.itemData }).subscribe(async (msg: any) => {
       if (msg) {
-        alert("Prato alterado com sucesso!!!")
-        window.location.reload()
+        if (success != undefined) {
+          success.hidden = false
+          await new Promise(time => setTimeout(time, 2000))
+          window.location.reload()
+        }
       }
     })
   }

@@ -186,3 +186,17 @@ input[type="number"] {
 }
 
 /* FIM ORGANIZAÇÃO DO FORMULÁRIO */
+
+/* Alert config */
+
+.alert {
+    position: fixed;
+    top: 10px;
+    z-index: 999;
+    transition: opacity 0.5s ease-out;
+}
+
+svg {
+    width: 30px;
+    margin-right: 15px;
+}
