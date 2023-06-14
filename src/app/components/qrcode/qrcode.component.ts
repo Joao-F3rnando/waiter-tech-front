@@ -23,6 +23,7 @@ export class QrcodeComponent {
     this.http.post(`${route}/getRestaurantId`, { idRestaurant: this.idRestaurant }).subscribe(async (msg: any) => {
       if (msg) {
         localStorage.setItem('idRestaurant', this.idRestaurant)
+        localStorage.removeItem('cartClient')
         this.router.navigate(['/home'])
       }
       else {

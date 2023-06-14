@@ -6,7 +6,7 @@
 <div class="seach-bar">
     <div class="procurar" (keyup.enter)="searchFunction()">
         <input placeholder="pesquisar restaurantes" class="input_pesquisar" [(ngModel)]="search">
-        <img class="lupa" src="../../../assets/lupa.png" alt="">
+        <img class="lupa" src="../../../assets/lupa.png" alt="" (click)="searchFunction()">
     </div>
 </div>
 

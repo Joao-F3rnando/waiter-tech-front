@@ -11,6 +11,7 @@ import { route } from 'src/app/app.component';
 export class MenuComponent {
   constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient) { }
 
+  restaurantName: any
   dishes: {
     ID: number,
     id_restaurant: number,
@@ -22,6 +23,9 @@ export class MenuComponent {
   }[] = []
 
   ngOnInit() {
+    this.http.post(`${route}/getRestaurantName`, { id: localStorage.getItem('idRestaurant') }).subscribe((msg: any) => {
+      this.restaurantName = msg.restaurant_name
+    })
     this.route.queryParams.subscribe(params => {
       this.http.post(`${route}/getMenuData`, { category: params['type'], id_restaurant: localStorage.getItem('idRestaurant') }).subscribe((msg: any) => {
         for (let i = 0; i < msg.length; i++) {

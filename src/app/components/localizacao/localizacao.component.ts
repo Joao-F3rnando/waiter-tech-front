@@ -12,12 +12,14 @@ export class LocalizacaoComponent {
   constructor(private router: Router, private route: ActivatedRoute, private http: HttpClient) { }
 
   restaurantData: {
-    photo: string;
-    restaurantName: string;
-    contact: string;
-    address: string;
-    time: string;
+    id: string
+    photo: string
+    restaurantName: string
+    contact: string
+    address: string
+    time: string
   } = {
+      id: '',
       photo: '',
       restaurantName: '',
       contact: '',
@@ -27,6 +29,7 @@ export class LocalizacaoComponent {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params => {
+      this.restaurantData.id = params['id']
       this.http.post(`${route}/getRestaurantInfo`, { id: params['id'] }).subscribe((msg: any) => {
         this.restaurantData.photo = `https://drive.google.com/uc?export=view&id=${msg.image}`
         this.restaurantData.restaurantName = msg.restaurant_name
