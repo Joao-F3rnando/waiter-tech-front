@@ -134,7 +134,7 @@ span {
     white-space: break-spaces;
 }
 
-::placeholder {
+textarea::placeholder {
     display: flex;
     text-indent: 0;
     white-space: pre-wrap;
@@ -142,16 +142,10 @@ span {
     text-align: start;
     font-size: 18px;
     line-height: 18px;
-    margin: 0;
-    padding: 0;
     word-wrap: break-word;
     white-space: break-spaces;
 }
 
-.large-input::placeholder {
-    position: absolute;
-    padding: 10px 0;
-}
 
 .finish-info {
     display: flex;
@@ -193,4 +187,15 @@ span {
     justify-content: center;
     align-items: center;
     width: 100px;
+}
+
+@media (max-width: 768px) {  /* Ajuste o valor 768px conforme necessário para atingir o ponto de interrupção desejado */
+  .large-input {
+    width: 100%; /* Altere a largura para ocupar toda a largura disponível */
+    margin-left: 0; /* Remova a margem esquerda para alinhar corretamente com o campo de entrada */
+  }
+
+  .large-input::placeholder {
+    text-align: start; /* Alinhe o texto à esquerda */
+  }
 }
