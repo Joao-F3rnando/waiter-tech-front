@@ -191,7 +191,7 @@ textarea::placeholder {
 
 @media (max-width: 768px) {  /* Ajuste o valor 768px conforme necessário para atingir o ponto de interrupção desejado */
   .large-input {
-    width: 100%; /* Altere a largura para ocupar toda a largura disponível */
+    width: 90%; /* Altere a largura para ocupar toda a largura disponível */
     margin-left: 0; /* Remova a margem esquerda para alinhar corretamente com o campo de entrada */
   }
 

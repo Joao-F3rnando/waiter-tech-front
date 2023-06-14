@@ -46,6 +46,7 @@ body {
     border: rgba(141, 153, 174, 0.37);
     width: 300px;
     height: 37px;
+    margin-left: 20px;
 }
 
 .input_pesquisar::placeholder {
